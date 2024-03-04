@@ -1,0 +1,5 @@
+[
+{"sid":"200800020101","name":"Wang Xin","sex":"女","age":"21","birthday":"1994-2-2","dname":"CS","class_":"2010"},
+{"sid":"200800020102","name":"Li Hua","sex":"女","age":"20","birthday":"1995-3-3","dname":"SC","class_":"2009"},
+{"sid":"200800020103","name":"Zhao Yan","sex":"男","age":"19","birthday":"1996-4-4","dname":"SC","class_":"2009"}
+]

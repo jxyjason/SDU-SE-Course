@@ -1,0 +1,5 @@
+[
+{"cid":"300001","name":"DS","fcid":"","credit":"2"},
+{"cid":"300002","name":"DB","fcid":"300001","credit":"2.5"},
+{"cid":"300003","name":"OS","fcid":"300001","credit":"4"}
+]

@@ -1,0 +1,5 @@
+[
+{"tid":"100101","name":"Zhang","sex":"F","age":"44","dname":"CS"},
+{"tid":"100102","name":"Li","sex":"M","age":"45","dname":"SC"},
+{"tid":"100103","name":"Ma","sex":"M","age":"46","dname":"CS"}
+]

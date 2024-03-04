@@ -1,0 +1,306 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#include <sys/time.h>
+#include <stdalign.h>
+#include <string.h>
+
+//chabiao   memset   xianglianghua   bianyicanshu 
+
+// Calculate sum of distance while combining different pivots. Complexity : O( n^2 )
+inline double SumDistance(const int k, const int n, const int dim, double* coord, int* pivots){
+    double* rebuiltCoord = (double*)aligned_alloc(8,sizeof(double) * n * k);
+    int i;
+
+// for(i=0; i<n*k; i++){
+//         rebuiltCoord[i] = 0;
+//     }
+    // double* p = rebuiltCoord;
+    // for(i=0; i<n*k;i+=1){
+    //     *(p++) = 0;
+    // }
+    memset(rebuiltCoord,0,n*k);
+    
+    
+    for(i=0; i<n; i+=1){
+        double* rcp = rebuiltCoord;
+        rcp += i*k;
+        int ki;
+        for(ki=0; ki<k; ki+=1){
+            double distance = 0;
+            int j;
+            for(j=0; j<dim; j+=1){
+                distance += (coord[pivots[ki]*dim+j] - coord[i*dim + j])*
+                    (coord[pivots[ki]*dim+j] - coord[i*dim + j]);
+                
+            }
+            // rebuiltCoord[i*k + ki] = sqrt(distance);
+            *(rcp++) = sqrt(distance);
+        }
+    }
+
+    // Calculate the sum of Chebyshev distance with rebuilt coordinates between every points
+    double chebyshevSum = 0;
+    for(i=0; i<n-1; i+=1){
+        int j;
+        for(j=i+1; j<n; j+=1){
+            double chebyshev = 0;
+            int ki;
+            for(ki=0; ki<k; ki+=1){
+                double dis = fabs(rebuiltCoord[i*k + ki] - rebuiltCoord[j*k + ki]);
+                chebyshev = dis>chebyshev ? dis : chebyshev;
+            }
+            chebyshevSum += chebyshev;
+            
+        }
+    }
+
+    free(rebuiltCoord);
+
+    return chebyshevSum * 2;
+}
+
+// Recursive function Combination() : combine pivots and calculate the sum of distance while combining different pivots.
+// ki  : current depth of the recursion
+// k   : number of pivots
+// n   : number of points
+// dim : dimension of metric space
+// M   : number of combinations to store,1000
+// coord  : coordinates of points
+// pivots : indexes of pivots
+// maxDistanceSum  : the largest M distance sum
+// maxDisSumPivots : the top M pivots combinations
+// minDistanceSum  : the smallest M distance sum
+// minDisSumPivots : the bottom M pivots combinations
+
+void Combination(const int k, const int n, const int dim, const int M,int* combineData,double* coord,
+                double* maxDistanceSum, int* maxDisSumPivots, double* minDistanceSum, int* minDisSumPivots){
+    int *pivots = (int*)aligned_alloc(8,sizeof(int) * k);
+    int i,indexNum;
+    for (i = 0; i < n*(n-1); i+=k)
+    {
+        int * pp = pivots;
+        int j;
+        for (j = 0; j < k; j++)
+        {
+            // printf("before %d,%d:%f\n",i,j,combineData[i+j]);
+            // pivots[j] = combineData[i+j];
+            *(pp++) = combineData[i+j];
+        }
+        
+        indexNum = i/k;
+        
+        double distanceSum = SumDistance(k, n, dim, coord, pivots);
+        // printf("end %d\n",i);
+        maxDistanceSum[indexNum] = distanceSum;
+        minDistanceSum[indexNum] = distanceSum;
+        
+        int * pmax = maxDisSumPivots;
+        int * pmin = minDisSumPivots;
+        pmax+=indexNum*k;
+        pmin+=indexNum*k;
+        int kj;
+        for(kj=0; kj<k; kj+=1){
+            *(pmax++) = pivots[kj];
+            *(pmin++) = pivots[kj];
+            // maxDisSumPivots[indexNum*k+ kj] = pivots[kj];
+            // minDisSumPivots[indexNum*k+ kj] = pivots[kj];
+        }
+    }
+
+    for (i = 0; i < M; i++)
+    {
+        int maxIndex = i;
+        int minIndex = i;
+        int j;
+        for (j = i; j < indexNum+1; j++)
+        {
+            if (maxDistanceSum[j]>maxDistanceSum[maxIndex])
+            {
+                maxIndex = j;
+            }
+            if (minDistanceSum[j]<minDistanceSum[minIndex])
+            {
+                minIndex = j;
+            }
+        }
+
+        double temp = maxDistanceSum[maxIndex];
+        maxDistanceSum[maxIndex] = maxDistanceSum[i];
+        maxDistanceSum[i] = temp;
+        int kj;
+        for(kj=0; kj<k; kj+=1){
+            int temp = maxDisSumPivots[maxIndex*k + kj];
+            maxDisSumPivots[maxIndex*k + kj] = maxDisSumPivots[i*k + kj];
+            maxDisSumPivots[i*k + kj] = temp;
+        }
+
+        temp = minDistanceSum[minIndex];
+        minDistanceSum[minIndex] = minDistanceSum[i];
+        minDistanceSum[i] = temp;
+        for(kj=0; kj<k; kj+=1){
+            int temp = minDisSumPivots[minIndex*k + kj];
+            minDisSumPivots[minIndex*k + kj] = minDisSumPivots[i*k + kj];
+            minDisSumPivots[i*k + kj] = temp;
+        }
+
+        printf("%f , %f \n",maxDistanceSum[i],minDistanceSum[i]);
+        
+    }
+
+}
+
+int main(int argc, char* argv[]){
+    
+    // filename : input file namespace
+    char* filename = (char*)"uniformvector-2dim-5h.txt";
+    if( argc==2 ) {
+        filename = argv[1];
+    }  else if(argc != 1) {
+        printf("Usage: ./pivot <filename>\n");
+        return -1;
+    }
+    // M : number of combinations to store
+    const int M = 1000;
+    // dim : dimension of metric space
+    int dim;
+    // n : number of points
+    int n;
+    // k : number of pivots
+    int k;
+
+    // Read parameter
+    FILE* file = fopen(filename, "r");
+    if( file == NULL ) {
+        printf("%s file not found.\n", filename);
+        return -1;
+    }
+    fscanf(file, "%d", &dim);
+    fscanf(file, "%d", &n);
+    fscanf(file, "%d", &k);
+    printf("dim = %d, n = %d, k = %d\n", dim, n, k);
+
+
+    FILE* combineDataFile = fopen((char*)"processedData.txt","r");//combined
+    
+    // Start timing
+    struct timeval start;
+
+    // Read Data
+    double* coord = (double*)aligned_alloc(8,sizeof(double) * dim * n);
+    int i;
+    for(i=0; i<n; i++){
+        int j;
+        for(j=0; j<dim; j++){
+            fscanf(file, "%lf", &coord[i*dim + j]);
+        }
+    }
+    fclose(file);
+    
+        
+int count = 0;
+
+    //combined
+    int * combined = (int*)aligned_alloc(8,sizeof(int) * n * (n-1) );
+    for(i=0;i<n * (n-1) / k;i+=1){
+        int j;
+        for (int j = 0; j < k; j+=1)
+        {
+            count++;
+            fscanf(combineDataFile,"%d",&combined[i*k+j]);
+            // printf("%d:%f\n",i*dim*k+j,combined[i*dim*k+j]);
+        }
+    }
+    fclose(combineDataFile);
+
+    gettimeofday(&start, NULL);
+
+
+    // maxDistanceSum : the largest M distance sum
+    double* maxDistanceSum = (double*)aligned_alloc(8,sizeof(double) * n*(n-1)/k);
+    // double * p = maxDistanceSum;
+    // for(i=0; i<n*(n-1)/k; i++){
+    //     // *(p++) = 0;
+    //     maxDistanceSum[i] = 0;
+    // }
+    memset(maxDistanceSum,0,n*(n-1)/k);
+    // maxDisSumPivots : the top M pivots combinations
+    int* maxDisSumPivots = (int*)malloc(sizeof(int)*n*(n-1));
+    // for(i=0; i<n*(n-1)/k; i++){
+    //     int ki;
+    //     for(ki=0; ki<k; ki++){
+    //         maxDisSumPivots[i*k + ki] = 0;
+    //     }
+    // }
+    memset(maxDisSumPivots,0,n*(n-1));
+    // minDistanceSum : the smallest M distance sum
+    double* minDistanceSum = (double*)aligned_alloc(8,sizeof(double) * n*(n-1)/k);
+    // for(i=0; i<n*(n-1)/k; i++){
+    //     minDistanceSum[i] = __DBL_MAX__;
+    // }
+    memset(minDistanceSum,__DBL_MAX__,n*(n-1)/k);
+    // minDisSumPivots : the bottom M pivots combinations
+    int* minDisSumPivots = (int*)malloc(sizeof(int) * n*(n-1));
+    // for(i=0; i<n*(n-1)/k; i++){
+    //     int ki;
+    //     for(ki=0; ki<k; ki++){
+    //         minDisSumPivots[i*k + ki] = 0;
+    //     }
+    // }
+    memset(minDisSumPivots,0,n*(n-1));
+  
+    // Main loop. Combine different pivots with recursive function and evaluate them. Complexity : O( n^(k+2) )
+    Combination(k, n, dim, M, combined,coord, maxDistanceSum, maxDisSumPivots, minDistanceSum, minDisSumPivots);
+
+    // End timing
+    struct timeval end;
+    gettimeofday (&end, NULL);
+    printf("Using time : %f ms\n", (end.tv_sec-start.tv_sec)*1000.0+(end.tv_usec-start.tv_usec)/1000.0);
+
+    // Store the result
+    FILE* out = fopen("result.txt", "w");
+    for(i=0; i<M; i++){
+        int ki;
+        for(ki=0; ki<k-1; ki++){
+            fprintf(out, "%d ", maxDisSumPivots[i*k + ki]);
+        }
+        fprintf(out, "%d\n", maxDisSumPivots[i*k + k-1]);
+    }
+    for(i=0; i<M; i++){
+        int ki;
+        for(ki=0; ki<k-1; ki++){
+            fprintf(out, "%d ", minDisSumPivots[i*k + ki]);
+        }
+        fprintf(out, "%d\n", minDisSumPivots[i*k + k-1]);
+    }
+    fclose(out);
+
+    // Log
+    int ki;
+    printf("max : ");
+    for(ki=0; ki<k; ki++){
+        printf("%d ", maxDisSumPivots[ki]);
+    }
+    printf("%lf\n", maxDistanceSum[0]);
+    printf("min : ");
+    for(ki=0; ki<k; ki++){
+        printf("%d ", minDisSumPivots[ki]);
+    }
+    printf("%lf\n", minDistanceSum[0]);
+    // for(i=0; i<M; i++){
+        // int ki;
+        // for(ki=0; ki<k; ki++){
+            // printf("%d\t", maxDisSumPivots[i*k + ki]);
+        // }
+        // printf("%lf\n", maxDistanceSum[i]);
+    // }
+    // for(i=0; i<M; i++){
+        // int ki;
+        // for(ki=0; ki<k; ki++){
+            // printf("%d\t", minDisSumPivots[i*k + ki]);
+        // }
+        // printf("%lf\n", minDistanceSum[i]);
+    // }
+
+    return 0;
+}
