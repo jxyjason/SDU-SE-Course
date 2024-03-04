@@ -1,0 +1,295 @@
+
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:m="http://schemas.microsoft.com/office/2004/12/omml"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=utf-8">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 14">
+<meta name=Originator content="Microsoft Word 14">
+</head>
+
+<body style='tab-interval:21.0pt;text-justify-trim:punctuation'>
+
+
+<div style="width:800px; margin:0 auto;">
+<div style="width:100%; text-align:center; font-size:20px; line-height:200%;">中级软件设计师下午试题-106</div>
+<div style="width:100%; text-align:center; font-size:12px; line-height:200%;">(总分：75.00，做题时间：90分钟)</div>
+            <div style="width:100%; text-align:left; font-size:14px; font-size:14px; line-height:150%;">一、{{B}}试题一{{/B}}(总题数：1，分数：15.00)</div><div style="width:100%; font-size:12px; line-height:120%;"><FONT size=+0>阅读下列说明和图，回答问题。<BR>  [说明]<BR>  
+Pay＆Drive系统(开多少付多少)能够根据驾驶里程自动计算应付的费用。<BR>  
+系统中存储了特定区域的道路交通网的信息。道路交通网由若干个路段(Road 
+Segment)构成，每个路段由两个地理坐标点(Node)标定，其里程数(Distance)是已知的。在某些地理坐标点上安装了访问控制(Access 
+Control)设备，可以自动扫描行驶卡(Card)。行程(Trajectory)由一组连续的路段构成。行程的起点(Entry)和终点(Exit)都装有访问控制设备。<BR> 
+ 系统提供了3种行驶卡。常规卡(Regular Card)有效期(Valid Period)为一年，可以在整个道路交通网内使用。季卡(Season 
+Card)有效期为三个月，可以在整个道路交通网内使用。单次卡(Minitrip 
+Card)在指定的行程内使用，且只能使用一次。其中，季卡和单次卡都是预付卡(Prepaid 
+Card)，需要客户(Customer)预存一定的费用。<BR>  
+系统的主要功能有客户注册、申请行驶卡、使用行驶卡行驶等。<BR>  
+使用常规卡行驶，在进入行程起点时，系统记录行程起点、进入时间(Date Of 
+Entry)等信息。在到达行程终点时，系统根据行驶的里程数和所持卡的里程单价(Unit 
+Price)计算应付费用，并打印费用单(Invoice)。<BR>  
+季卡的使用流程与常规卡类似，但是不需要打印费用单，系统自动从卡中扣除应付费用。<BR>  
+单次卡的使用流程与季卡类似，但还需要在行程的起点和终点上检查行驶路线是否符合该卡所规定的行驶路线。<BR>  
+现采用面向对象方法开发该系统，使用UML进行建模。构建出的用例图和类图分别如图1和图2所示。<BR>  
+<DIV align=center><img src='/attachfilepick.aspx?path=\ExamPaperRes\2015\10\27\de049948073a4766bec06ce86b31e6a6\92451f46-591e-4d9b-a695-512c05309408.jpg'><BR> 
+ 图1</DIV><BR>  
+<DIV align=center><img src='/attachfilepick.aspx?path=\ExamPaperRes\2015\10\27\de049948073a4766bec06ce86b31e6a6\224a47f2-e4dd-454a-a83d-04b3715a1339.jpg'><BR> 
+ 图2</DIV></FONT>（分数：15.00）</div><div style="width:100%; font-size:12px; line-height:120%;">(1).根据说明中的描述，给出图1中U1和U2所对应的用例，以及(1)所对应的关系。（分数：5.00）</div><div style="width:95%; padding-left:5%; font-size:12px; line-height:120%; ">__________________________________________________________________________________________<br/>正确答案：(U1：使用常规卡行驶。
+ U2：使用单次卡行驶。
+ (1)extend。)<div style="width:100%; font-size:12px; line-height:120%;">解析：[解析] 本题考查面向对象开发相关知识，涉及UML用例图、类图以及类图设计时的设计模式。UML目前在面向对象软件开发中广泛使用，是面向对象软件开发考查的重要内容。
+ 本题主要考查用例图。
+ 用例之间的关系主要有以下三种：
+ (1)包含关系。当可以从两个或两个以上的用例中提取公共行为时，应该使用包含关系来表示它们，用＜＜include＞＞表示。
+ (2)扩展关系。如果一个用例明显地混合了两种或两种以上的不同场景，即根据情况可能发生多种分支，则可以将这个用例分为一个基本用例和一个或多个扩展用例，这样使描述可能更加清晰，用＜＜extend＞＞表示。
+ (3)泛化关系。当多个用例共同拥有一种类似的结构和行为的时候，可以将它们的共性抽象成为父用例，其他的用例作为泛化关系中的子用例。
+ 在本题中，从题目的描述中，不难看出，用例图中缺失的用例有“使用常规卡行驶”和“使用单次卡行驶”，那么U1和U2具体对应哪个用例。根据题目说明并结合用例图来看，“使用季卡行驶”与U1是泛化关系，由此可知U1应该是“使用常规卡行驶”，而U2是“使用单次卡行驶”，根据题目描述“单次卡的使用流程与季卡类似，但还需要在行程的起点和终点上检查行驶路线是否符合该卡所规定的行驶路线”，由此可知，U1是对“使用季卡行驶”的扩展，由此第1空应填＜＜extend＞＞。</div><div style="width:100%; font-size:12px; line-height:120%;">(2).根据说明中的描述，给出图2中缺少的C1～C6所对应的类名以及(2)～(3)处所对应的多重度(类名使用说明中给出的英文词汇)。（分数：5.00）</div><div style="width:95%; padding-left:5%; font-size:12px; line-height:120%; ">__________________________________________________________________________________________<br/>正确答案：(C1:RoadSegment C2:Trajectory C3:Card
+ C4:RegularCard C5:PrepaidCard C6:MinitripCard
+ (2)1。
+ (3)1..3。)<div style="width:100%; font-size:12px; line-height:120%;">解析：[解析] 本问题考查类图。对于这个题目，应该结合题目的描述及给出的类图来求解。根据题目的描述，本系统包含的类主要有路段(Road Segment)、地理坐标点(Node)、访问控制(Access Control)设备、自动扫描行驶卡(Card)、行程(Trajectory)、常规卡(Regular Card)、季卡(Season Card)、单次卡(Minitrip Card)、预付卡(Prepaid Card)和客户(Customer)等。
+ 从类图中C1与类Node的关系和C2与AccessControlNode的关系，再结合题目描述“路段由两个地理坐标点(Node)标定”可以知道C1应该是路段类，而由题目描述“行程(Trajectory)由一组连续的路段构成。行程的起点(Entry)和终点(Exit)都装有访问控制设备”可以知道C2应该是行程(Trajectory)类。
+ 而从类图看，C4和C5是继承于C3的，再结合类图中C3与客户类和行程类的关系，可知C3应该是一切卡的抽象类，因此是自动扫描行驶卡(Card)，而C5是C6和季卡的父类，再根据题目描述“季卡和单次卡都是预付卡(PrepaidCard)”可知C5是预付卡(PrepaidCard)，而C6是单次卡(MinitripCard)，而C4是常规卡(RegularCard)。
+ 在UML中，多重度又称重复度，多重度表示为一个整数范围n..m，整数n定义所连接的最少对象的数目，而m则为最多对象数(当不知道确切的最大数时，最大数用*号表示)。最常见的多重性有0..1、0..*、1..1和1..*，而*与0..*是等价的。
+ 空(2)和(3)描述的是客户与卡之间的多重度，题目告诉我们系统有三种卡，因此一个客户最多可以持有这三种卡，因此空(3)应填1..3。而一个卡只能被一个客户持有，因此客户这端应该填1。</div><div style="width:100%; font-size:12px; line-height:120%;">(3).根据说明中的描述，给出Road Segment、Trajectory和Card所对应的类的关键属性
+  (属性名使用说明中给出的英文词汇)。（分数：5.00）</div><div style="width:95%; padding-left:5%; font-size:12px; line-height:120%; ">__________________________________________________________________________________________<br/>正确答案：(RoadSegment的属性：Distance。
+ Trajectory的属性：Entry、Exit、DateOfEntry。
+ Card的属性：UnitPrice、ValidPeriod。)<div style="width:100%; font-size:12px; line-height:120%;">解析：[解析] 根据题目描述，RoadSegment类应该包含的关键属性是里程数(Distance)，因为这能标识一个路段的长度；而Trajectory类应该包含的关键属性是起点(Entry)、终点(Exit)、进入时间(Date Of Entry)，这样才能说明某一次行程是何时从哪里开始到那里结束的；而Card类的关键属性应包含有效期(Valid Period)和里程单价(Unit Price)。</div><div style="width:100%; text-align:left; font-size:14px; font-size:14px; line-height:150%;">二、{{B}}试题二{{/B}}(总题数：1，分数：15.00)</div><div style="width:100%; font-size:12px; line-height:120%;"><FONT 
+size=+0>某公司的主要业务是出租图书和唱碟。由于业务需求，该公司委托希赛公司开发一套信息管理系统。该系统将记录所有的图书信息、唱碟信息、用户信息、用户租借信息等。希赛公司决定采用面向对象的分析和设计方法开发此系统。图1所示为某类图书或唱碟被借阅时应记录的信息，图2描述了系统定义的两个类Book和CD，分别表示图书和唱碟的信息。<BR> 
+ 
+<DIV align=center><img src='/attachfilepick.aspx?path=\ExamPaperRes\2015\10\27\0b127f7ed3cc448cb8f5f23264097f65\a6d9d41f-3578-49d9-8419-f8e03a04f9b3.jpg'><BR> 
+ <STRONG>图1 借阅时应记录的信息</STRONG></DIV><BR>  
+<DIV align=center><img src='/attachfilepick.aspx?path=\ExamPaperRes\2015\10\27\0b127f7ed3cc448cb8f5f23264097f65\3c60f7a1-f8cd-4960-9673-a89b6ebc3e7c.jpg'><BR> 
+ <STRONG>图2 借阅时应记录的信息</STRONG></DIV></FONT>（分数：15.00）</div><div style="width:100%; font-size:12px; line-height:120%;">(1).经过进一步分析，设计人员决定定义一个类Items_on_loan，以表示类Book和CD的共有属性和方法。请采用图2中属性和方法的名称给出类Items_on_loan应该具有的属性和方法(注意，不同名称的属性和方法表示不同的含义，如CD中的composer与Book中的author无任何关系)。（分数：5.00）</div><div style="width:95%; padding-left:5%; font-size:12px; line-height:120%; ">__________________________________________________________________________________________<br/>正确答案：(属性：title，
+ 方法：Reference Title。)<div style="width:100%; font-size:12px; line-height:120%;">解析：[解析] 本题主要涉及类的设计、类之间的关系和顺序图。
+ 在面向对象的程序设计当中，类的设计是非常重要的，类设计的合理性直接影响到整个系统的性能。
+ 问题1要求考生写出类Items_on_loan的属性和方法，由于题目已经说明此类的属性和方法是Book类和CD类的公共属性和方法；又因为Book类和CD类中，不同名的属性、方法表示的含义不同，所以公共属性和方法就是同名属性和方法，因此Items on loan的属性有title，方法有Reference title。</div><div style="width:100%; font-size:12px; line-height:120%;">(2).为了记录每种图书或唱碟租借的历史记录，引入类CirculationHistoiy，类中存储的信息是图1中所表示的内容。请采用UML表示法将下列4个类之间的关系表示出来。
+  <img src='/attachfilepick.aspx?path=\ExamPaperRes\2015\10\27\0b127f7ed3cc448cb8f5f23264097f65\159db6e5-6103-4cd4-9d22-a4b54b3813e2.jpg'>（分数：5.00）</div><div style="width:95%; padding-left:5%; font-size:12px; line-height:120%; ">__________________________________________________________________________________________<br/>正确答案：(见图。
+ [*])<div style="width:100%; font-size:12px; line-height:120%;">解析：[解析] 问题2引入了CirculationHistory类，此类用于记录每种图书或光盘的租借记录。现要求CirculationHistory类、Book类、CD类及Items on loan类之间的关系，Items_on_loan是类Book和CD的公共部分，用面向对象的术语来说，类Items on loan是类Book和CD的父类，所以它们之间存在继承关系。
+ 再看CirculationHistor)，类和其他类的关系，CirculationHistory类只需要记录图书或唱碟的名称及借阅记录，而不需要其他详细资料，这样，CirculationHistory不必和Book与CD产生关系，只需要与Items on loan产生关系即可。由于CirculationHistory中除记录图书或唱片名称以外，还需要记录借出时间、归还时间及用户名，这些数据无法从Items_on_loan中获取。一个CirculationHistorv只包含一个Items_on_loan，存在1:1的关系，这说明Items_on_loan其实只是CirculationHistory的组成部分，但Items_on_loan可脱离CirculationHistory而独立存在，也就是说，一本图书或一张CD可以没有记录其借阅历史的CirculationHistory，但有记录其基本信息的。Items_on_loan，所以它们之间又存在聚集关系(而不是那种部分随整体销毁而销毁的组合关系)。综上所述，4个类的关系如图所示。
+ [*]
+ 聚合关联中涉及重复度，当没有指定重复度时，默认重复度为1，那么，图中两个类CirculationHistory、Items_on_loan所在端的重复度都为1。</div><div style="width:100%; font-size:12px; line-height:120%;">(3).现需了解十大最畅销(借出次数最多)图书或唱碟。为此，引入TenPopulate类以存储所有十大畅销图书或CD的名称及其被借出的次数。如图3所示的顺序图描述了某类图书或唱碟被借出后成为十大畅销图书或唱碟时对象间的消息交互。系统在一次运行过程中，应有{{U}} 
+{{U}} 3 {{/U}} 
+{{/U}}个TenPopulate实例对象最合适，一个TenPopulate类实例对象最多需要和{{U}} {{U}} 4 
+{{/U}} {{/U}}个Items_on_loan实例对象交互。<BR>  
+<DIV align=center><img src='/attachfilepick.aspx?path=\ExamPaperRes\2015\10\27\0b127f7ed3cc448cb8f5f23264097f65\203ea79d-c5c6-45a8-8937-25b7a2b9f173.jpg'><BR> 
+ <STRONG>图3 顺序图</STRONG></DIV>（分数：5.00）</div><div style="width:95%; padding-left:5%; font-size:12px; line-height:120%; ">__________________________________________________________________________________________<br/>正确答案：((1)1。
+ (2)图书和唱碟种类数。)<div style="width:100%; font-size:12px; line-height:120%;">解析：[解析] 题目中说“引入TemPopulate类以存储所有十大畅销图书或CD的名称及其被借出的次数”，可见TemPopulate类的功能是存储所有十大畅销图书或CD的名称及其被借出的次数。既然如此，系统在一次运行中只需要1个TenPopulate实例对象就可以了，因为它存储所有十大畅销图书或CD的名称及其被借出的次数。每当有图书或唱碟被借出时，都需要和TenPopulate类的对象发生交互，因此，当所有图书或CD都被借阅时，TenPopulate类实例对象需要跟所有这些Items_on_loan实例对象交互更新借出次数以评出十大最畅销图书或CD，一个TenPopulate类实例对象最多需要和“图书和唱碟种类总数”个Items_on_loan实例对象交互。</div><div style="width:100%; text-align:left; font-size:14px; font-size:14px; line-height:150%;">三、{{B}}试题三{{/B}}(总题数：1，分数：15.00)</div><div style="width:100%; font-size:12px; line-height:120%;"><FONT size=+0>阅读下列说明和图，回答问题。<BR>  [说明]<BR>  
+某网上购物平台的主要功能如下：<BR>  
+(1)创建订单。顾客(Customer)在线创建订单(Order)，主要操作是向订单中添加项目、从订单中删除项目。订单中应列出所订购的商品(Product)及其数量(quantities)。<BR> 
+ (2)提交订单。订单通过网络来提交。在提交订单时，顾客需要提供其姓名(Name)、收货地址(Address)以及付款方式(Form of 
+Payment)(预付卡、信用卡或者现金)。为了制定送货计划以及安排送货车辆，系统必须确定订单量(Volume)。除此之外，还必须记录每种商品的名称(Name)、造价(Cost 
+Price)、售价(Sale Price)以及单件商品的包装体积(Cubic Volume)。<BR>  
+(3)处理订单。订单处理人员接收来自系统的订单；根据订单内容，安排配货，制定送货计划。在送货计划中不仅要指明发货日期(Delively 
+Date)，还要记录每个订单的限时发送要求(Delivery Time Window)。<BR>  
+(4)派单。订单处理人员将已配好货的订单转交给派送人员。<BR>  
+(5)送货/收货。派送人员将货物送到顾客指定的收货地址。当顾客收货时，需要在运货单(Delivery 
+Slip)上签收。签收后的运货单最终需交还给订单处理人员。<BR>  
+(6)收货确认。当订单处理人员收到签收过的运货单后，会和顾客进行一次再确认。<BR>  
+现采用面向对象方法开发上述系统，得到如图1所示的用例图和如图2所示的类图。<BR>  
+<DIV align=center><img src='/attachfilepick.aspx?path=\ExamPaperRes\2015\10\27\8b2cb90d0cc0497992c57af9a471764d\39485c16-09ae-421c-a8cd-d56024047d6e.jpg'><BR> 
+ <STRONG>图1 用例图2</STRONG></DIV><BR>  
+<DIV align=center><img src='/attachfilepick.aspx?path=\ExamPaperRes\2015\10\27\8b2cb90d0cc0497992c57af9a471764d\c2f6b4cb-fda8-4197-b28b-7c579f5ccb57.jpg'><BR> 
+ <STRONG>图2 类图2</STRONG></DIV></FONT>（分数：15.00）</div><div style="width:100%; font-size:12px; line-height:120%;">(1).根据说明中的描述，给出图1中A1～A3所对应的参与者名称和U1～U2处所对应的用例名称。（分数：5.00）</div><div style="width:95%; padding-left:5%; font-size:12px; line-height:120%; ">__________________________________________________________________________________________<br/>正确答案：(A1：顾客 A2：订单处理人员 A3：派送人员
+ U1：收货 U2：派单)<div style="width:100%; font-size:12px; line-height:120%;">解析：[解析] 本题考查面向对象开发相关知识，涉及UML用例图、类图以及类图设计时的设计模式。UML目前在面向对象软件开发中广泛使用，是面向对象软件开发考查的重要内容。
+ 本题主要考查用例图。
+ 在本题中，从题目的描述中，可以知道，本系统的用例主要有创建订单、提交订单、处理订单、派单、收货、送货及收货确认，本系统的参与者主要有订单处理人员、顾客和派送人员。
+ 其中在用例图中还没有给出的用例有派单和收货，因此U1和U2应该就是这两个用例，具体它们分别对应那一个呢?需要先来确认A1～A3所对应的参与者，A1与用例创建订单、U1及收货确认有关系，根据题目描述“顾客在线创建订单”可知A1应该是顾客，同样的道理，不难得出A2是订单处理人员，A3是派送人员。
+ 用例U1与三个参与者都有关系，那么根据题目描述“派送人员将货物送到顾客指定的收货地址。当顾客收货时，需要在运货单(Delivery Slip)上签收。签收后的运货单最终需交还给订单处理人员”，不难得知U1应该是收货。而U2是派单。</div><div style="width:100%; font-size:12px; line-height:120%;">(2).根据说明中的描述，给出图2中C1～C3所对应的类名以及(1)～(4)处所对应的多重度(类名使用说明中给出的英文词汇)。（分数：5.00）</div><div style="width:95%; padding-left:5%; font-size:12px; line-height:120%; ">__________________________________________________________________________________________<br/>正确答案：(C1：Customer  C2：Order  C3：Product
+ (1)1
+ (2)0..n或O..*
+ (3)0..n或0..*
+ (4)1..n或1..*)<div style="width:100%; font-size:12px; line-height:120%;">解析：[解析] 本问题考查类图。对于这个题目，应该结合题目的描述及给出的类图来求解。从题目给出的类图中可以看出，C1中包含了属性姓名(Name)和收货地址(Address)，由此不难推断出C1是顾客(Customer)类。
+ C2与C1和Delivery Time Window类有关联，可以推断出C2应该是订单(Order)类，而C3与C2是一种组合关系，其中C2是整体，而C3是部分，而C2是订单，订单是由商品组成的，由此可以C3是商品(Product)类。
+ 在UML中，多重度又称重复度，多重度表示为一个整数范围n..m，整数n定义所连接的最少对象的数目，而m则为最多对象数(当不知道确切的最大数时，最大数用*号表示)。最常见的多重性有0..1、0..*、1..1和1..*，而*与0..*是等价的。
+ 顾客可以创建多个订单，也可以不创建订单，而一个订单必须属于而且只能属于1个顾客，因此空(1)与空(2)分别为1和1..*。
+ 一个订单中可以至少应该包含一个商品，也可以包含多个商品，而某商品可以不在任何订单中，也可以是多个订单中都有该商品，因此空(3)与空(4)应该分别是0..*和1..*。</div><div style="width:100%; font-size:12px; line-height:120%;">(3).根据说明中的描述，将类C2和C3的属性补充完整(属性名使用说明中给出的英文词汇)。（分数：5.00）</div><div style="width:95%; padding-left:5%; font-size:12px; line-height:120%; ">__________________________________________________________________________________________<br/>正确答案：(C2：volume、delivery date、form of payment。
+ C3：cubic volume、cost price、sale price。)<div style="width:100%; font-size:12px; line-height:120%;">解析：[解析] 根据题目描述，系统必须记录每种商品的名称(Name)、造价(Cost Price)、售价(Sale Price)以及单件商品的包装体积(Cubic Volume)，因此C3除了名称(Name)外，还应该拥有造价、售价以及单件商品的包装体积等属性。
+ 根据题目描述，每个订单应该有其付款方式(Form Of Payment)、订单量(Volume)和发货日期(Delivery Date)。</div><div style="width:100%; text-align:left; font-size:14px; font-size:14px; line-height:150%;">四、{{B}}试题四{{/B}}(总题数：1，分数：15.00)</div><div style="width:100%; font-size:12px; line-height:120%;"><FONT size=+0>阅读下列说明和图，回答问题。<BR>  [说明]<BR>  
+某城市的各国家公园周边建造了许多供游客租用的小木屋和营地，为此该城市设置了一个中心售票处和若干个区域售票处。游客若想租用小木屋或营地，必须前往中心售票处进行预定并用现金支付全额费用。所有的预定操作全部由售票处的工作人员手工完成。现欲开发一信息系统，实现小木屋和营地的预定及管理功能，以取代手工操作。该系统的主要功能描述如下：<BR> 
+ (1)管理预定申请。游客可以前往任何一个售票处提出预定申请。系统对来自各个售票处的预定申请进行统一管理。<BR>  
+(2)预定。预定操作包含登记游客预定信息、计算租赁费用、付费等步骤。<BR>  
+(3)支付管理。游客付费时可以选择现金和信用卡付款两种方式。使用信用卡支付可以享受3%的折扣，现金支付没有折扣。<BR>  
+(4)游客取消预定。预定成功之后，游客可以在任何时间取消预定，但需支付赔偿金，剩余部分则退还给游客。赔偿金的计算规则是，在预定入住时间之前的48小时内取消，支付租赁费用10%的赔偿金；在预定入住时间之后取消，则支付租赁费用50%的赔偿金。<BR> 
+ (5)自动取消预定。如果遇到恶劣天气(如暴雨、山洪等)，系统会自动取消所有的预定，发布取消预定消息，全额退款。<BR>  
+(6)信息查询。售票处工作人员查询小木屋和营地的预定情况和使用情况，以判断是否能够批准游客的预定申请。<BR>  
+现采用面向对象方法开发上述系统，得到如表1所示的用例列表和表2所示的类列表。对应的用例图和类图分别如图1和图2所示。<BR>  
+<DIV align='"center"'><img src='/attachfilepick.aspx?path=\ExamPaperRes\2015\10\27\7a8b85dcb7044f308ab352517791ba3a\4ab2211d-96ae-432d-8254-c184d1760c3d.jpg'><BR> 
+ <STRONG>图1 用例图</STRONG></DIV><BR>  
+<DIV align='"center"'><img src='/attachfilepick.aspx?path=\ExamPaperRes\2015\10\27\7a8b85dcb7044f308ab352517791ba3a\5f1a6ff9-941f-47ae-990f-eda13dcf1a59.jpg'><BR> 
+ <STRONG>图2 类图</STRONG></DIV><BR>  表1
+<TABLE class=extd_c border=1 cellSpacing=0 align=center>
+<TBODY>
+<TR>
+<TD style="BORDER-LEFT: medium none" 
+colSpan=4><STRONG>用例列表</STRONG><BR></TD></TR>
+<TR>
+<TD>用例名</TD>
+<TD>说 明</TD>
+<TD>用例名</TD>
+<TD class=extd_r>说 明</TD></TR>
+<TR>
+<TD>Managelnquiries</TD>
+<TD>管理预定申请</TD>
+<TD>ManageCashPayment</TD>
+<TD class=extd_r>现金支付</TD></TR>
+<TR>
+<TD>MakeReservation</TD>
+<TD>预定</TD>
+<TD>ManageCrCardPayment</TD>
+<TD class=extd_r>信用卡支付</TD></TR>
+<TR>
+<TD>ManagePayment</TD>
+<TD>支付管理</TD>
+<TD>GetDiscount</TD>
+<TD class=extd_r>计算付款折扣</TD></TR>
+<TR>
+<TD>CancelReservation</TD>
+<TD>游客取消预定</TD>
+<TD>AutoCancelReservation</TD>
+<TD class=extd_r>系统自动取消预定</TD></TR>
+<TR>
+<TD>CheckAvailability</TD>
+<TD>信息查询</TD>
+<TD>CalculateRefund</TD>
+<TD class=extd_r>计算取消预定的赔偿金</TD></TR>
+<TR>
+<TD>PublishMessage</TD>
+<TD>发布取消预定消息</TD>
+<TD> </TD>
+<TD class=extd_r> </TD></TR></TBODY></TABLE>表2 
+<TABLE class=extd_c border=1 cellSpacing=0 align=center>
+<TBODY>
+<TR>
+<TD style="BORDER-LEFT: medium none" 
+colSpan=4><STRONG>类列表</STRONG><BR></TD></TR>
+<TR>
+<TD>用例名</TD>
+<TD>说 明</TD>
+<TD>用例名</TD>
+<TD class=extd_r>说 明</TD></TR>
+<TR>
+<TD>NationalParlk</TD>
+<TD>国家公园</TD>
+<TD>Customer</TD>
+<TD class=extd_r>游客</TD></TR>
+<TR>
+<TD>Reservation</TD>
+<TD>预定申请</TD>
+<TD>ReservationItem</TD>
+<TD class=extd_r>预定申请内容</TD></TR>
+<TR>
+<TD>TicketingOfficer</TD>
+<TD>售票处</TD>
+<TD>CampSite</TD>
+<TD class=extd_r>营地</TD></TR>
+<TR>
+<TD>Bungalow</TD>
+<TD>小木屋</TD>
+<TD>Payment</TD>
+<TD class=extd_r>付款</TD></TR>
+<TR>
+<TD>Discount</TD>
+<TD>付款折扣</TD>
+<TD>CashPayment</TD>
+<TD class=extd_r>现金支付</TD></TR>
+<TR>
+<TD>CreditCardPayment</TD>
+<TD>信用卡支付</TD>
+<TD>Rate</TD>
+<TD class=extd_r>租赁费用</TD></TR></TBODY></TABLE></FONT>（分数：15.00）</div><div style="width:100%; font-size:12px; line-height:120%;">(1).根据说明中的描述与表1，给出图1中UC1～UC6处所对应的用例名称。（分数：5.00）</div><div style="width:95%; padding-left:5%; font-size:12px; line-height:120%; ">__________________________________________________________________________________________<br/>正确答案：(UC1 CheckAvailability  UC2：MakeReservation
+ UC3：GetDiscount  UC4：MangeCashPayment
+ UC5：ManageCrCardPayment UC6：CalcuateRefund)<div style="width:100%; font-size:12px; line-height:120%;">解析：[解析] 本题考查用例图和类图。涉及用例之间的关系、类之间的关系等问题。
+ 本题要补充完整用例图，这是考试中常考的知识点。在题目的描述中，其实已经给出了本题中相关的用例，只需要通过阅读题目的描述，理解清楚这些用例之间的关系，然后结合用例图就可以完成这个问题。
+ 在用例图中，只有一个参与者，就是售票处工作人员，通过题目的描述，不难知道，他应该与自动取消预订、游客取消预定、管理预定申请和信息查询这些用例有直接关系，因此可以知道用例UC2是信息查询用例(CheckAvailability)。从用例图中可以看出，UC1与信息查询和管理预定申请都是一种包含关系，说明用例UC1是信息查询和管理预定申请这两个用例必须都经历的一种行为，因此可以知道此用例是预订(MakeReservation)。
+ UC3是支付管理的包含用例，根据题目的描述不难知道，在每次付款时，都要首先计算付款折扣，因此支付管理用例肯定包含了计算付款折扣这个用例，UC3就是计算付款折扣(GetDiscount)。支付方式有现金支付和信用卡支付两种方式，这两种方式与支付管理是一种泛化关系，因此可以UC4和UC5分别是现金支付(MangeCashPayment)和信用卡支付(ManageCrCardPayment)，当然，它们的位置可以互换。
+ 另外，从用例图不难看出，UC6是游客取消预定和系统自动取消预定用例所包含的用例，而这两个用例都必须包含的部分是计算机赔偿金，因此UC6是计算取消预定的赔偿金(CalcuateRefund)。</div><div style="width:100%; font-size:12px; line-height:120%;">(2).根据说明中的描述与表2，给出图2中C1～C7处所对应的类名。（分数：5.00）</div><div style="width:95%; padding-left:5%; font-size:12px; line-height:120%; ">__________________________________________________________________________________________<br/>正确答案：(C1 NationaIPark  C2：Rate
+ C3：Ticketing officer C4：Payment
+ C5：Discount  C6：CasbPayment
+ C7：CreditCardPayment)<div style="width:100%; font-size:12px; line-height:120%;">解析：[解析] 本题要补充完整类图，也是考试中常考的知识点。题目中给出了相关的类，要根据题目的描述并结合类图来完成。
+ C1与类预定申请内容是一种组合关系，而其内容其实就是供游客租用的小木屋和营地以及它们的价格等信息，再结合类图可知，C1应该是国家公园。而从类图可以看出，C2聚合而成预定申请内容类，那么根据前面的分析，不难知道C2是租凭费用类。
+ 从类图不难看出，C6和C7是继承与C4，而从题目的分析中，只有付款、现金支付、信用卡支付存在这种继承关系，因此可以确定C4是付款，而C6和C7分别对应现金支付和信用卡支付其位置可以互换。这样就剩下C3和C5没有确定，而没有确定的类还有售票处和付款折扣。其中，C3与预定申请有关，根据题目描述，预定申请是要提交给售票处的，因此可以确定C3就是售票处，而付款的时候有个付款折扣信息，C5就是付款折扣。</div><div style="width:100%; font-size:12px; line-height:120%;">(3).对于某些需求量非常大的小木屋或营地，说明中功能4的赔偿金计算规则，不足以弥补取消预定所带来的损失。如果要根据预定的时段以及所预定场地的需求量，设计不同层次的赔偿金计算规则，请用文字说明需要对图2进行怎样的修改?（分数：5.00）</div><div style="width:95%; padding-left:5%; font-size:12px; line-height:120%; ">__________________________________________________________________________________________<br/>正确答案：(解答1：增加一个新的类，该类与类Reservationltem之间有关联关系。
+ 或解答2：修改Rate类．使其具有计算赔偿金的功能。
+ 回答其中一种修改方式即可。)<div style="width:100%; font-size:12px; line-height:120%;">解析：[解析] 问题3主要是要设计赔偿金计算规则，要实现这个功能，可以添加一个类来实现，这类要与类Reservationltem之间有关联关系，也可以在原来的类中实现，如果是这样，就应该是类Rate中实现，因为这个类实现的是租凭费用，且这个类与Reservationltem之间是一种聚合的关联关系。</div><div style="width:100%; text-align:left; font-size:14px; font-size:14px; line-height:150%;">五、{{B}}试题五{{/B}}(总题数：1，分数：15.00)</div><div style="width:100%; font-size:12px; line-height:120%;"><FONT size=+0>某汽车停车场欲建立一个信息系统，已经调查到的需求如下： <BR>  
+(1)在停车场的入口和出口分别安装一个自动栏杆、一台停车卡打印机、一台读卡器和一个车辆通过传感器，示意图如图1所示。 <BR>  
+<DIV align='"center"'><img src='/attachfilepick.aspx?path=\ExamPaperRes\2015\10\27\807572ba87ea4e76b7e45e2f62fe0a7d\e8118e96-a8dd-45dd-9d9e-78758b00831c.jpg'> <BR> 
+ <STRONG>图1 停车示意图</STRONG></DIV><BR>  
+(2)当汽车到达入口时，驾驶员按下停车卡打印机的按钮获取停车卡。当驾驶员拿走停车卡后，系统命令栏杆自动抬起；汽车通过入口后，入口处的传感器通知系统发出命令，栏杆自动放下。 
+<BR>  
+(3)在停车场内分布着若干个付款机器。驾驶员将在入口处获取的停车卡插入付款机器，并缴纳停车费。付清停车费之后，将获得一张出场卡，用于离开停车场。 
+<BR>  
+(4)当汽车到达出口时，驾驶员将出场卡插入出口处的读卡器。如果这张卡是有效的，系统命令栏杆自动抬起；汽车通过出口后，出口传感器通知系统发出命令，栏杆自动放下。若这张卡是无效的，系统不发出栏杆抬起命令而发出告警信号。 
+<BR>  
+(5)系统自动记录停车场内空闲的停车位的数量。若停车场当前没有车位，系统将在入口处显示“车位已满”信息。这时，停车卡打印机将不再出卡，只允许场内汽车出场。 
+<BR>  
+根据上述描述，采用面向对象方法对其进行分析与设计，得到了如表所示的类/用例/状态列表、如图2所示的用例图、如图3所示的初始类图以及如图4所示的描述入口自动栏杆行为的UML状态图。 
+<BR>  
+<DIV align='"center"'><img src='/attachfilepick.aspx?path=\ExamPaperRes\2015\10\27\807572ba87ea4e76b7e45e2f62fe0a7d\c532538c-403d-4752-973a-9fcee2cefcf4.jpg'> <BR> 
+ <STRONG>图2 用例图</STRONG></DIV><BR>  
+<DIV align='"center"'><img src='/attachfilepick.aspx?path=\ExamPaperRes\2015\10\27\807572ba87ea4e76b7e45e2f62fe0a7d\f843a04c-abc8-4d03-abb6-382263d32bbb.jpg'> <BR> 
+ <STRONG>图3 初始类图</STRONG></DIV><BR>  
+<DIV align='"center"'><img src='/attachfilepick.aspx?path=\ExamPaperRes\2015\10\27\807572ba87ea4e76b7e45e2f62fe0a7d\31610b4a-97c4-4e69-a4aa-d5808f92ae61.jpg'> <BR> 
+ <STRONG>图4 入口护栏的状态图</STRONG></DIV>
+<TABLE class=extd_c border=1 cellSpacing=0 align=center>
+<TBODY>
+<TR>
+<TD style="BORDER-LEFT: medium none" 
+colSpan=6><STRONG>类/用例/状态列表</STRONG><BR></TD></TR>
+<TR>
+<TD>用例名</TD>
+<TD>说 明</TD>
+<TD>类 名</TD>
+<TD>说 明</TD>
+<TD>状态名</TD>
+<TD class=extd_r>说 明</TD></TR>
+<TR>
+<TD rowSpan=4>Car entry</TD>
+<TD rowSpan=4>汽车进入停车场</TD>
+<TD rowSpan=4>CentralComputer</TD>
+<TD rowSpan=4>停车场信息<BR>系统</TD>
+<TD rowSpan=4>Idle</TD>
+<TD class=extd_r rowSpan=4>空闲状态，汽<BR>车可以进入停<BR>车场</TD></TR>
+<TR></TR>
+<TR></TR>
+<TR></TR>
+<TR>
+<TD>Car exit</TD>
+<TD>汽车离开停车场</TD>
+<TD>PaymentMachine</TD>
+<TD>付款机器</TD>
+<TD>Disable</TD>
+<TD class=extd_r>没有车位</TD></TR>
+<TR>
+<TD rowSpan=6>Repoit<BR>Statistics</TD>
+<TD rowSpan=6>记录停车场的相<BR>关信息</TD>
+<TD rowSpan=3>CarPark</TD>
+<TD rowSpan=3>停车场，保存<BR>车位信息</TD>
+<TD rowSpan=3>Await Entry</TD>
+<TD class=extd_r rowSpan=3>等待汽车进入</TD></TR>
+<TR></TR>
+<TR></TR>
+<TR>
+<TD rowSpan=3>Barrier</TD>
+<TD rowSpan=3>自动护栏</TD>
+<TD rowSpan=3>Await Ticket<BR>Take</TD>
+<TD class=extd_r rowSpan=3>等待打印停<BR>车卡</TD></TR>
+<TR></TR>
+<TR></TR>
+<TR>
+<TD rowSpan=3>Car entry<BR>when full</TD>
+<TD rowSpan=3>没有车位时，汽车<BR>请求进入停车场</TD>
+<TD rowSpan=2>EntryBarrier</TD>
+<TD rowSpan=2>入口的护栏</TD>
+<TD rowSpan=3>Await Enable</TD>
+<TD class=extd_r rowSpan=3>等待停车场内<BR>有空闲车位</TD></TR>
+<TR></TR>
+<TR>
+<TD>ExitBarrier</TD>
+<TD>出口的护栏</TD></TR></TBODY></TABLE></FONT>（分数：15.00）</div><div style="width:100%; font-size:12px; line-height:120%;">(1).根据说明中的描述，使用表给出的用例名称，给出图2中U1、U2和U3所对应的用例。（分数：3.75）</div><div style="width:95%; padding-left:5%; font-size:12px; line-height:120%; ">__________________________________________________________________________________________<br/>正确答案：(U1：Car entry  U2：Carexit  U3：Car entry when full)<div style="width:100%; font-size:12px; line-height:120%;">解析：[解析] 本题考查的面比较广，涉及用例图、类图和状态图。
+ 题目中车辆入场和出场，而入场时分有空位和无空位的情形，当无车位时显示“车位已满”信息。这时，停车卡打印机将不再出卡，只允许场内汽车出场。说明入场时，没有车位入场是一种扩展关系。根据图2和表可以得出U1为Car entry，U2为Car exit，U3为Car entry when full。</div><div style="width:100%; font-size:12px; line-height:120%;">(2).根据说明中的描述，使用表给出的类的名称，给出图3中的A～D所对应的类。（分数：3.75）</div><div style="width:95%; padding-left:5%; font-size:12px; line-height:120%; ">__________________________________________________________________________________________<br/>正确答案：(A：CarPark  B：Barrier
+ C：EntryBarrier  D：ExitBarrier
+ 其中，C、D的答案可以互换)<div style="width:100%; font-size:12px; line-height:120%;">解析：[解析] 根据题目的描述及表中的内容，可以先来确定类B。汽车出入口，当卡有效时，系统自动抬起栏杆；当卡无效时，则系统不抬栏杆，且发出警告。所以自动护栏类(Barrief)有两种子类：一个是入口的护栏类(EntryBarrier)；另一个就是出口的护栏类(ExitBarrier)。构成了这种父子关系的类在图3中表示为，类B为护栏类(Barrier)；类C为入口护栏类(EntryBarrier)；类D为出口护栏类(ExitBarrier)。再确定类A，由于停车场管理系统管理着多张卡，从图3中可以看出类Centralcomputer与类A之间有1..*的关系；而且类A与类B(Barrier)之间存在聚集关系；题目的描述中有：当有车位时允许入场，无车位时停车卡打印机将不再出卡，只允许场内汽车出场。所以一张卡片可以确定多个护栏抬起或不发卡入场，由表可以得出类A为停车场保存卡位信息类(CarPark)。</div><div style="width:100%; font-size:12px; line-height:120%;">(3).根据说明中的描述，使用表给出的状态名称，给出图4中S1～S4所对应的状态。（分数：3.75）</div><div style="width:95%; padding-left:5%; font-size:12px; line-height:120%; ">__________________________________________________________________________________________<br/>正确答案：(S1：Idle  S2：Await Ticket Take
+ S3：Await Enable  S4：Await Entry)<div style="width:100%; font-size:12px; line-height:120%;">解析：[解析] 根据题目的描述和表，黑点表示开始状态，到达S1，很容易确定S1为状态：Idle(空闲状态，汽车可以进入停车场)。又因为状态Disable(没有车位)到S3有事件“索取停车卡”，而从S3到S2有事件“有空闲车位/打印停车卡”，由题目的第(4)、(5)点可知，车位满了后，若有车辆出去，则释放一个车位；若没有，则等待打印停车卡。所以可以确定S3的状态为Await Ticket Take(等待打印停车卡)。
+ S1到S2有事件“索取停车卡/打印停车卡”，S2到S4有事件“取走停车卡/抬起护栏”，包括S3到S2有事件“有空闲车位/打印停车卡”，则说明S2这个状态都与“有车位，才发卡”有关，要等待有车位才发卡，或取卡放行后进入等待。所以S2为状态Await Enable(等待停车场内有空位)。
+ 最后来确定S4。由于S2到S4有事件“取走停车卡/抬起护栏”，S4到S1有事件“汽车进入停车场/放下护栏”。很显然，当取走停车卡/抬起护栏将车子放行后，管理系统将停车位的空闲车位数加1；当汽车进入停车场/放下护栏后，管理系统将停车位的空闲车位数减1。因此状态S4为Await Entry(等待汽车进入)。</div><div style="width:100%; font-size:12px; line-height:120%;">(4).简要解释图2中用例U1和U3之间的extend关系的内涵。（分数：3.75）</div><div style="width:95%; padding-left:5%; font-size:12px; line-height:120%; ">__________________________________________________________________________________________<br/>正确答案：(用例之间的延伸关系用于对被用户看作是可选系统行为的用例的一部分建模。通过这种方式，可以把可选行为从必需的行为中分离出来。)<div style="width:100%; font-size:12px; line-height:120%;">解析：[解析] 题目中汽车的入场，通常是指有空位入场；但也有要入场但没有空位的情况，这要等待。而这种关系就是扩展了的入场关系。</div></div></body></html>
