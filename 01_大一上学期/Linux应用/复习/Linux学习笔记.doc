@@ -1,0 +1,291 @@
+ 该文章是小弟学习linux归纳出来的一些基础知识，也是做为自己的参考资料，希望各位渴望学习linux的朋友们共同学习。
+ 
+1、linux分区
+--在linux里面所有的设备、任何东西，在linux看来都是文件。
+--文件在它看来，有两种形式：
+  第一种是字符型（键盘输入、打印机）；
+  第二种是二进制型（硬盘、光驱、U盘）
+--linux中所有硬件
+--手动分区
+--A、至少有两个分区
+  /    根分区
+  SWAP 交换分区(物理内存大小的两倍)
+--B、个人桌面分区
+  / 
+  /boot 128MB is enough
+  /usr
+  SWAP
+  /tmp(用于光盘刻录)
+ 
+2、linux目录说明
+--/dev/xxyN
+--xx (分区所在设备类型：hd--IDE硬盘   sd--SCSI硬盘)
+--y  (标明分区所在设备
+      例如：/dev/hda 第一个IDE硬盘 或 /dev/hdb 第二个IDE硬盘 或 /dev/sdb 第二个SCSI硬盘)
+--N  (数字代表分区：1-4--主分区或扩展分区；逻辑分区从5开始！
+      例如：/dev/hda3 第一个IDE硬盘上的第三个主分区或扩展分区
+            /dev/sdb6 第二个SCSI硬盘上的第二个逻辑分区)
+ 
+3、linux目录结构
+/     根目录，最高级别
+/bin  系统基本命令存放目录(/usr/bin)
+/boot linux的内核及引导系统程序文件存放目录(如：vmlinuz、initrd.img)
+      一般情况下，GRUB或LILO系统引导管理也位于这个目录
+/dev  设备文件存储目录，如声卡、光驱...
+/ect  存放系统设置文件(如用户账号密码、服务器配置文件等)
+/home 普通用户家目录，默认存放目录
+/lib  库文件存放目录
+/lost+found  在ext2或ext3文件系统中，当系统以外崩溃或机器意外关机，而产生一些文件碎片放在这里。
+             当系统启动的过程中，fsck工具会检查这里，并修复已经损坏的文件系统。
+      有事喜用发生问题，有很多的文件被移到这个目录中，可能会用手工的方式来修复，或者移文件到原来的位置上。
+/media 即插即用型存储设备的挂载点自动在这个目录下创建。
+       如USB盘系统自动挂在后，会在这个目录下产生一个目录；
+       类似cdrom的目录
+/mnt   存放挂载存储设备的挂载目录，如cdrom等目录
+/opt   表示可选的意思，有些软件包也会被安装在此，也就是自定义软件包，
+       比如OpenOffice，或者一些我们自己编译的软件包，也可安装此处。
+/proc  操作系统运行时，进程(正在运行的程序)信息及内核信息(比如CPU、硬盘分区、内存信息等)存放在此。
+       /proc目录是伪装的文件系统proc的挂载目录，proc并不是真正的文件系统
+/root  linux超级权限用户root的家目录
+/sbin  大多是涉及系统管理的命令的存放，只有超级权限用户root才可执行命令存放，普通用户无权限执行此目录下的命令
+       与 /usr/sbin; /usr/X11R6/sbin; usr/local/sbin 目录相似
+       (sbin，只有root权限才能执行)
+/tmp   临时文件目录，有时用户运行程序的时候，会产生临时文件。
+       /var/tmp目录和此目录相似
+/usr   系统存放程序的目录，如命令、帮助文件等。这个目录下有很多的文件和目录。
+       大部分Linux发行版提供的软件包都安装在此，涉及服务器的配置文件就安装在/ect中。
+       /usr/share/fonts 字体目录
+       /usr/share/man 或 /usr/share/doc 帮助目录
+       /usr/bin 或 /usr/local/bin 或 /usr/X11R6/bin    普通用户可执行文件目录
+       /usr/sbin 或 /usr/local/sbin 或 /usr/X11R6/sbin 超级权限用户root可执行命令存放目录
+       /usr/include 程序头文件存放目录
+/var   (vary)此目录经常变动
+       /var/log 用来存放系统日志
+       /var/www 用来定义Apache服务器站点存放
+       /var/lib 用来存放一些库文件，如MySQL的，以及MySQL数据库的存放地。
+ 
+4、基本命令
+--查看帮助   *** --help   *** --?
+--查看详细帮助  man ***
+--登录 login
+--退出窗口 exit
+--关机 shutdown
+--重启 reboot
+--初始化 init (run level -/etc/inittab)，0-6看第六部分的g
+--进入根目录 cd /
+--回上层目录 cd ..
+--相对路径 cd dev
+--绝对路径 cd /dev
+--查用户名 whoami
+--查当前目录 pwd
+--列出当前目录内容 ls  
+      -l(树详细显示目录内容)
+      -m(横列显示目录内容，是屏幕长度显示)
+      -a(列出全部文件，包括隐藏文件)
+      -S(以文档大小排序)
+--创建目录 mkdir dname
+--删除目录 rmdir dname
+      rm -r *** -(递归删除该目录下所有内容，询问每个准备删除的文件)
+      rm -rf ***-(强制删除该目录下所有内容，不询问)
+--创建空白文件 touch ***
+      (ps：从技术的角度来讲，linux的文件后缀名没有任何意义)
+--复制 cp 
+      cp -r **1 **2 (复制1到2中)
+--移动 mv
+      mv -t **1 **2 (把2移动到1中)
+--编辑文本 vi [文件名]
+--查看文本 cat  由第一行开始显示文本內容
+           tac  从最后一行显示，可以看出 tac 是 cat 的倒着写
+           more 一页一页的显示文档內容
+           less 与 more 类似，可以往前翻页
+           head 只看头几行
+      -N(数字，可根据行数显示)
+           tail 只看后几行
+      -N(数字，可根据行数显示)
+           nl   显示的時候，顺序输出行号
+           od   以二进制位的方式读取档案內容
+--查找文本 find [路径][查找类型][搜索文件名]
+           如查找rc.local  find /etc -name *.local
+--查找命令信息及其位置   whereis 命令
+           如 whereis ls
+--查看环境变量 echo $SHELL
+           如 echo $PATH (分大小写：分隔符是:,windows是echo %path%;)
+--链接 ln
+           如 ln joe.txt a (硬链接，如同复制一个新文件，joe.txt删除后，a还存在)
+    a是链接的名称，a和joe.txt同步，然后a的内容和joe.txt一样
+    joe.txt改变，a也跟着变
+    如 ln -s joe.txt b (软链接，如同创建一个快捷方式，joe.txt删除后，b不存在)
+--wc 统计指定文本文件的行数、字数、字符数
+--grep(很常用) 在指定的文本文件中查找指定的字符串
+    grep 字符串 文件名
+--col 见管道..
+--------------------
+----信息显示命令----
+--------------------
+--date     显示和设置日期
+--stat     显示指定文件的相关信息
+--who、w   显示在线登录用户
+--whoami   显示用户自己的身份
+--id       显示当前用户的id信息
+--hostname 显示主机名称
+--uname    显示操作系统信息
+--dmesg    显示系统启动信息
+--du       显示指定的文件（目录）已使用的磁盘空间
+--df       显示文件系统磁盘空间的使用情况
+--free     显示当前内存和交换空间的使用情况
+--fdisk -l 显示磁盘信息
+--locale   显示当前语言环境
+ 
+
+5、挂载点(mount 设备目录 挂载目录)
+--访问设备 (那设备当成一个文件，和另外一个文件夹进行绑定)
+--例如挂载光驱：步骤 [cd /mnt]---[mkdir cdr]---[mount /dev/cdrom /mnt/cdr]---[cd cdr]--OK!直接访问光驱内容
+--卸载挂载设备(umount /dev/cdrom)--注意必须先退出挂载目录，否则出现"device is busy"错误.
+ 
+6、startup-shutdown（linux启动流程）
+--A、boot sequence(important) linux启动过程
+     a. load bios(hardware information)
+     b. read MBR's config to find out the OS
+        (MBR--Master Boot Record，硬盘第一个物理扇区，柱面0、磁头0、扇区1，包含主引导程序和硬盘分区表)
+     c. load the kernel of the OS 
+        (加载为kernel核心的OS)
+     d. init process starts... 
+        (启动linux第一个进程init)
+     e. execute /etc/rc.d/sysinit 
+        (执行系统最重要的配置文件，后台启用进程) 
+ (rc.d--run command)
+     f. start other modules(stc/modules.conf)
+        (开启各种模块，如内存管理模块、硬盘管理模块)
+     g. execute the run level scripts
+        (系统启动是分层次的，根据情况执行，每个层次之间没关系)
+ 0 - 系统停机状态
+ 1 - 单用户工作状态 root
+ 2 - 多用户状态(没有NFS) 
+ 3 - 多用户状态(有NFS)
+     NFS - Network File System 网络文件系统，联网系统
+ 4 - 系统未使用，留给用户
+ 5 - 图形界面
+ 6 - 系统正常关闭并重新启动
+ 如：cd /etc -- 有rc0.d、rc1.d、rc2.d、rc3.d、rc4.d、rc5.d等多个文件夹，保存着各个层次执行的进程文件
+     h. execute /etc/rc.d/rc.local (重要)
+        (保存其它进程脚本，如tomcat自动启动，要修改此配置文件)
+     i. execute /bin/login
+        (登录界面)
+     j. shell started...
+ 
+
+7、vi 文本编辑器
+--两种模式：命令模式   编辑模式
+--vi [文件名]
+  (切换到编辑模式)
+  a   append-光标后添加
+  i   insert-光标前插入
+  o   open-另起一行编辑
+  esc (切换回命令模式)
+  :w  存盘
+  :wq 存盘退出
+  :q  退出
+  :q! 不存盘退出
+  dd  删除其中一行
+  dw  删除一个单词
+（sudo gedit 文本  常用linux下的文本编辑器，比vi好用）
+
+8、用户设置
+--切换用户(switch user) su username
+    小技巧：直接exit切换
+--添加用户 useradd username [-g] [组名](分配到某个用户组)
+  (创建后会自动在/home目录下创建该新用户的文件夹，如/home/username)
+--设置密码 passwd username
+--cd /etc
+  --查看用户信息 more password
+    如新增的用户信息：username:x:500:500::/home/username:/bin/bash
+    第一个数字，代表用户组，当添加用户没有指定用户组时，系统会创建一个和用户ID一样的组ID；
+    第二个数字：用户ID号；
+    用户的目录是/home/username；
+    用户的SHELL是/bin/bash  
+        (命令--->SHELL[解释命令]--->kenrel内核)
+        SHELL有多种类型，如csh、bash(常用)、bsh、ksh、sh(最原始)
+--添加用户组 groupadd groupname
+  --查看用户组信息 more group
+--删除用户组 groupdel groupname
+--修改用户 usermod [-g] [组名] [用户名]
+--删除用户 userdel username
+     然后把/home的文件夹删除了 rm -rf 文件夹
+
+9、权限file privilege
+--linux把文件的权限分成四种：r：read  w：write  x：execute  -：none
+如：-rw-r--r--
+    lrwxrwxrwx
+    drwxr-xr-x
+    drwxr-xr-x
+  第一个数字'-'代表文件，其余是文件夹，后9位分为3组，每组有四种权限设置rwx-
+  第一位表示文件所有者
+  第二位表示和所有者在同一用户组的用户
+  第三位表示不在同一用户组的用户权限
+--设置权限 (随意应用，灵活组合！)
+ 1、普通用法
+  --添加权限  [chmod +x 文件]
+    如：-rw-r--r-- ---> -rwxr-xr-x
+  --删除权限  [chmod -x 文件]
+    如：-rwxr-xr-x ---> -rw-r--r--
+  --给自己添加权限  [chmod ?+x 文件]
+    如此类推，组--g，其他人--o 
+    如：chmod u+x   -rw-r--r-- ---> -rwxr--r--
+        chmod g+x   -rw-r--r-- ---> -rw-r-xr--
+ chmod o+x   -rw-r--r-- ---> -rw-r--r-x
+ 2、专业用法  chmod 755/777
+  --原理，八进制转二进制
+      如755，111 101 101， rwx r-x r-x
+        777，111 111 111， rwx rwx rwx
+--修改所有者权限 chown (change owner)
+  如：chown 原来文件 file1 的所有者是 root，改成joe的
+      chown joe file1
+
+10、管道(把上一个命令执行的结果交给下一个命令)
+    --使用方法：
+        命令1|命令2|命令3......|命令n
+    --使用举例
+      --$ls -Rl /etc | more
+        (如 ls -Rl /etc (在控制台模式下，无法返回前面过去的信息)，因此需要管道执行该查询，实现分页的工作， ls -Rl /etc | more)
+      --$cat /etc/passwd | wc
+        (显示文件结果，再数数有多少行)
+      --$cat /etc/passwd | grep  lrj
+        (显示文件结果，再查找包含lrj的行)
+      --#dmesg | grep eth0
+        (显示系统启动的信息，再查找包含eth0的行--真正含义，检查网卡执行信息是否正常)
+      --$man bash | col -b > bash.txt
+          语　　法：col [-bfx][-l<缓冲区列数>]
+          补充说明：在许多UNIX说明文件里，都有RLF控制字符。当我们运用shell特殊字符">"和">>"，把说明文件的内容输出成纯文本文件时，控制字符会变成乱码，col指令则能有效滤除这些控制字符。
+          参　　数：
+            -b   过滤掉所有的控制字符，包括RLF和HRLF。
+            -f   滤除RLF字符，但允许将HRLF字符呈现出来。
+            -x   以多个空格字符来表示跳格字符。
+            -l<缓冲区列数>   预设的内存缓冲区有128列，您可以自行指定缓冲区的大小。
+      --$ls -l | grep "^d"
+        (用正则表达式筛选出目录列表中 头字母为'd' 的内容--目录)(^是正则表达式开头部分)
+      --$ls -l * | grep "^-" | wc -l
+        (列出目录列表中 头字符为'-'的内容--文件，并统计显示的行数wc -l)
+ 
+11、其他命令
+  --wall(warning all) 通知所有人
+  a.命令替换
+    如 wall `date`、 cd 'pwd'、mkbootdisk $(uname -r)
+  b.重定向
+      重定向输出：
+      如 ls > cmd.txt ，把文件写到cmd.txt，不输出在控制台
+         ls >> cmd.txt ，把文件追加写到cmd.txt
+      重定向输入：
+      如 wall > cmd.txt，把文本内容发给所有人
+ 
+12、修改系统的默认系统级别
+  常用3和5
+  3 - 多用户状态(有NFS)
+      NFS - Network File System 网络文件系统，联网系统
+  5 - 图形界面
+
+PS.设置用户权限： sudo chmod 777 目录
+   4表示读,2表示写,1表示执行.
+   第一位表示文件所有者,第二位表示和所有者在同一用户组的用户,第三位表示不在同一用户组的用户权限.
+   755表示文件所有者可读写,执行.
+   第二位5表示与所有者在同一用户组的可读,可执行,不可写.
+   第三位5表示其它组可读,可执行,不可写.
