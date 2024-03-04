@@ -1,0 +1,40 @@
+ 写出下列Java程序的运行结果(10分)
+ 
+ 
+public class Animal {
+public void speak( Animal   p) {System.out.println("Animal Speak!");}
+}
+
+public class Dog extends Animal {
+public void speak(Animal   p) {System.out.println("汪!");}
+public void speak(Dog  t) { System.out.println("汪汪");}
+}
+请写出下面程序的输出结果 
+
+Animal  p1 = new Animal () ;
+Animal  p2 = new Dog () ;
+Dog p3 = new Dog () ;
+ 
+p1.speak(  p1  ) ;
+p1.speak(  p2  ) ;
+p1.speak(  p3  ) ;
+ 
+p2.speak(  p1  ) ;
+p2.speak(  p2  ) ;
+p2.speak(  p3  ) ;
+ 
+p3.speak(  p1  ) ;
+p3.speak(  p2  ) ;
+p3.speak(  p3  ) ;
+
+
+
+Animal Speak!
+Animal Speak!
+Animal Speak!
+汪!
+汪!
+汪!
+汪!
+汪!
+汪汪

@@ -1,0 +1,34 @@
+   int  a[8]   
+   //a[i]=j    i行j列放皇后
+   
+   
+ q(1)
+                     
+                     
+                     
+   q(i) 
+ //参数  i 层数  
+   
+   
+   for j:=1 to 8 do
+     a[i]:=j;
+     if i=8  then
+       if chk(i)=true then print(A)
+       end if
+     else
+       if chk(i) = true then q(i+1)
+       end if
+     end if    
+   end do
+   
+   
+   
+   
+   chk(i)  // i层数 
+   
+   for j:=1 to i-1 do
+     if a[j]=a[i] then return false
+     if a[j]-a[i]=i-j then return false
+     if a[j]-a[i]=j-i then return false
+   end do
+   return true
