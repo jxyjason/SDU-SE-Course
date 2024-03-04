@@ -1,0 +1,50 @@
+第一章 画编译流程图，注明各部分功能
+第二章
+GRAMMAR
+2.2.1
+2.2.3
+2.2.4 a) c)
+2.2.5
+REGULAR EXPRESSIONS
+3.3.5 a) b) i)
+regular expression->finite automata
+3.6.2 a) b) i)
+NFA
+3.6.3
+NFA->DFA
+3.7.1
+RE->DFA
+3.7.3
+
+Top-Down Parsing
+4.4.1
+
+LR 
+4.6.2
+4.6.3
+4.6.5
+4.6.6
+LR(1) LALR
+4.7.1
+4.7.4
+4.7.5
+
+DECLARATIONS
+6.3.1
+ASSIGNMENTS&ARRAY
+6.4.3
+6.4.6
+TYPE
+6.5.1
+
+CONTROL FLOW&BACKTRACKING
+6.7.1
+6.7.2
+
+RUNTIME ENVIRONMENT
+7.2.3
+7.2.5
+
+DAG 
+8.5.1
+8.5.2

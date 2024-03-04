@@ -1,0 +1,18 @@
+int main(){
+int a,b;
+a=0;
+b=1;
+if(a>0)then{
+a = a + b;
+}else{
+a = a - b;
+}
+return 0;
+}
+
+int swap(int a,int b){
+int temp;
+temp = a;
+a = b;
+b = temp;
+}

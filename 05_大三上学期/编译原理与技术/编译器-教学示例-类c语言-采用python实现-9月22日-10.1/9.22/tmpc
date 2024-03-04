@@ -1,0 +1,9 @@
+int foo(int a, int b, int c, int d, int e, int f){
+int a=1,b=2,c=3;
+                  return a+b+c+d+e+f;
+             }
+
+             int main() {
+                  if(1==1) then
+                        return foo(1,2,3,4,5,6);
+             } 

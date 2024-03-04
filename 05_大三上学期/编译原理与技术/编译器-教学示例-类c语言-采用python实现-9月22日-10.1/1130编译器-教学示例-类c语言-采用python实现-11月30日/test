@@ -1,0 +1,5 @@
+int main(){
+int array[4] = {2,4,3,1};
+array[1] = array[2];
+return array[1];
+}

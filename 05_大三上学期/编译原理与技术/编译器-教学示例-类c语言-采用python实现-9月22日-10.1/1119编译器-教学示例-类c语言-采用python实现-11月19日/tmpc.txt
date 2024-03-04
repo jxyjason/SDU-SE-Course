@@ -1,0 +1,17 @@
+int main(){
+    int array[4] = {2,4,3,1};
+    int len;
+    len = 4;
+    int i,min;
+    min =0;
+    i=1;
+        while(i<len){
+            int minus;
+            minus = array[min]-array[i];
+            if(minus>0)then{
+                min = i;
+            }
+            i = i+1;
+        }
+	return 0;
+}

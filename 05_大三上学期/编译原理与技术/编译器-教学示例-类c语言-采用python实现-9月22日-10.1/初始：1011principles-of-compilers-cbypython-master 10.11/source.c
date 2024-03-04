@@ -1,0 +1,1 @@
+int main() {bool b; b = true ; return 3;}
