@@ -1,0 +1,78 @@
+ 1· 计算优化
+    由于公钥运算的基本运算是X^Y%Z，几百到数千比特的大数，可想有多慢。
+    使用CRT，使用多因子rsa，使用硬件指令、并行、cuda、asic等，good。
+
+    RSA：https://zhuanlan.zhihu.com/p/450180396
+    CRT：https://blog.csdn.net/weixin_70337339/article/details/131481275
+    多素数：https://blog.csdn.net/mrpre/article/details/79671263
+
+
+    2. 密码抽象设备：服务和接口
+    模仿秀，举例考虑两个场景，一个是像ms的os windows中的cryptoapi、pkcs#11这种；
+    另一个是linux内核中的crypto子系统，延申至考虑hmos中的密码子系统的设计。
+
+	CryptoAPI（Cryptographic Application Programming Interface）是一组由微软提供的加密功能接口，用于在应用程序中执行密码学操作，例如加密、解密、哈希、数字签名等。CryptoAPI 提供了一种标准化的方式来访问密码学服务和功能，以便应用程序可以安全地处理敏感数据。它支持对称加密、非对称加密、哈希算法、数字签名和随机数生成等操作。
+	PKCS#11（Public-Key Cryptography Standards #11）是一种密码设备接口标准，定义了用于访问密码设备（如智能卡、USB加密令牌等）的应用程序编程接口（API）。PKCS#11 提供了一种通用的方式来与密码设备进行交互，以执行各种密码学操作，如密钥生成、加密、解密、签名、验证等。它定义了一组函数和数据结构，应用程序可以使用这些函数来与密码设备进行通信。
+	Linux Crypto子系统是Linux内核中的一个模块化框架，用于提供各种加密和密码学功能。它为应用程序和其他内核组件提供了一组API和接口，使它们能够利用硬件和软件加密功能来执行各种密码学操作。
+
+    3. PKI和应用：https://zhuanlan.zhihu.com/p/30136885
+    解决分布式系统中数据传输、存储、处理的中安全，一般意义下的解决方案就是PKI。
+    从公钥到证书，CA是信任的零点，把证书、公钥、私钥、签名、验证、加密、解密串联在一起，
+    于是就有了PGP、SSL、VPN、TSA、bitcoin，
+    几乎所有的网络APP的安全(尤其是涉及密码的)解决方法都是基于PKI这个套路，
+    也有这种盛世文物之数字时代的忽悠 https://zhuanlan.zhihu.com/p/450802534
+    TSA这个还能进一步衍生很多别的应用，比如参见tsa.cn推介的业务。
+    
+    4. 现有分布式网络应用的安全改造方案
+    观察ssh是如何让6000端口上x-window流量被ssh劫持以实现x被ssh保护的样子，
+    就明白了ssh的-R和-L选项可以为“一般性的c/s结构的不曾考虑安全的网络程序”
+    提供“外挂”方式的安全补偿。
+
+    5.TEE：可信执行环境 https://blog.csdn.net/mlynb/article/details/130640309
+    TEE位于主OS环境和CPU之间，在CPU帮助下建立一个小巧的轻量级的安全环境，
+    为上面的OS（比如android等）提供可以信任的密码功能和安全服务。
+    ARM上的tee支持技术叫trustzone，
+    高通骁龙（Qualcomm Snapdragon）的tee实现叫QSEE/QTEE。
+    
+    6. 安全标准、管理和法规
+    keke
+    出现在第一份ppt第33页；https://www.oscca.gov.cn/sca/xxgk/2012-11/22/content_1002397.shtml
+    
+    7. hash函数
+    hash在密码算法中是非常独特的存在，功能多多多，用于随机数、认证码、签名、
+    登录认证、p2p文件分享、校验，从hashcash到bitcoin，
+    现在环球最大规模的单一计算任务可能就是挖矿，
+    相当于数以百万计的显卡在计算sha2/256。
+
+    8. RAS
+    是ibm为了维护关键业务（比如银行金融交易业务），需要排查和避免哪怕
+    中子衰变为质子导致的比特反转（bit flip）导致的错误。
+    如果怀疑一个函数执行过程中因变量和门电路受辐射导致返回了错误的结果而不自知，
+    怎么发现和纠正？这就是RAS需要解决的问题。
+    如果是几类密码函数，如何设计才能高效的满足RAS追求的目标？
+    https://www.ibm.com/docs/en/zos-basic-skills?topic=it-mainframe-strengths-reliability-availability-serviceability
+    https://zhuanlan.zhihu.com/p/340605298
+
+    9. OS（Windows和或linux）中的密码工程的体现？
+    windows中除了像bitlocker、efs、smime等这种零散的密码安全功能，
+    Window活动目录（active directory）集中体现了密码在安全功能中的用途。
+    linux中两个地方：
+    【1】内核中的密码子系统，浏览一下这两个页即可建立一个基本的概念
+    https://elixir.bootlin.com/linux/latest/source/Documentation/crypto
+    https://elixir.bootlin.com/linux/latest/source/crypto
+    【2】luks/cryptsetup/dm-crypt这三个词揭示了linux中块设备加密的技术脉络，
+    可以依据这三个词查询网络以建立基本的概念。
+    
+    10. 有个表很重要，描述了未来几十年主流密码技术的安全强度
+    （貌似没有考虑可能的量子计算技术的突破）
+ 安全强度(难度) AES     RSA        ECC     Year
+     2^80       80      1024       160     2010
+    2^112      112      2048       224     2030
+    2^128      128      3072       256     2050
+    2^192      192       7/8k      384     2080
+    2^256      256       15k       512     2120
+
+
+AES比较特殊，没有比穷举密钥更高效的攻击算法了。密钥长度就是穷举攻击的复杂度，所以看上去AES算法密钥长度就等于它的密钥强度
+160位ECC加密安全性相当于1024位RSA加密，224位ECC加密安全性相当于2048位RSA加密
+
