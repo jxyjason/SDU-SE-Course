@@ -1,0 +1,54 @@
+-- MySQL dump 10.13  Distrib 8.0.23, for Win64 (x86_64)
+--
+-- Host: 127.0.0.1    Database: student_arrangement
+-- ------------------------------------------------------
+-- Server version	8.0.23
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!50503 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `choosecourse`
+--
+
+DROP TABLE IF EXISTS `choosecourse`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `choosecourse` (
+  `index` int NOT NULL AUTO_INCREMENT,
+  `userid` varchar(45) DEFAULT NULL,
+  `courseid` varchar(45) DEFAULT NULL,
+  `grade` int DEFAULT NULL,
+  `ifchoose` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`index`)
+) ENGINE=InnoDB AUTO_INCREMENT=226 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `choosecourse`
+--
+
+LOCK TABLES `choosecourse` WRITE;
+/*!40000 ALTER TABLE `choosecourse` DISABLE KEYS */;
+INSERT INTO `choosecourse` VALUES (173,'100004','30',97,'1'),(174,'100004','35',97,'1'),(175,'100004','36',78,'1'),(176,'100004','37',80,'1'),(177,'100004','38',100,'1'),(178,'100004','40',96,'1'),(179,'100005','27',96,'1'),(180,'100005','29',77,'1'),(181,'100005','40',76,'1'),(182,'100005','38',98,'1'),(183,'100005','37',98,'1'),(184,'100005','36',87,'1'),(185,'100005','35',96,'1'),(186,'100005','34',98,'1'),(187,'100006','36',95,'1'),(188,'100006','37',97,'1'),(189,'100006','38',97,'1'),(190,'100006','39',99,'1'),(191,'100006','27',92,'1'),(192,'100006','30',98,'1'),(217,'111111','27',12,'1'),(218,'111111','29',55,'1'),(219,'111111','30',0,'1'),(220,'111111','35',0,'1'),(221,'111111','36',0,'1'),(222,'111111','37',0,'1'),(224,'111111','40',0,'1');
+/*!40000 ALTER TABLE `choosecourse` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2021-12-03 19:25:57
