@@ -1,0 +1,61 @@
+CS 162:  Operating Systems and System Programming
+
+Tom Anderson
+Computer Science Division
+University of California, Berkeley
+Spring 1993
+
+
+W.A. Christopher, S.J. Procter, and T.E. Anderson.
+The Nachos Instructional Operating System.
+To appear, Proc. 1993 Winter USENIX Conference (January 1993),
+pp. 479-488.
+
+C.A.R. Hoare,
+The Emperor's Old Clothes.
+Communications of the ACM, vol. 24, no. 2 (February 1981),
+pp. 75-83.
+
+Andrew Birrell.
+An Introduction to Programming with Threads.
+Technical Report #35, Digital Equipment Corporation Systems Research Center.
+
+Carl Hauser et al.
+A Case Study of Using Threads in Interactive Programs.
+Proc. of the 14th ACM Symposium on Operating System Principles, Dec. 1993.
+
+Dennis M. Ritchie and Ken Thompson.  The UNIX Timesharing System.
+Communications of the ACM, vol. 17, no. 7 (July 1974), pp. 365-375.
+
+H. Levy and P. Lipman.
+Virtual Memory Management in the VAX/VMS Operating System.
+IEEE Computer Magazine, March 1982, pp. 35-41.
+
+M. McKusick, W. Joy, S. Leffler, and R. Fabry.
+A Fast File System for UNIX.
+ACM Transactions on Computer Systems, vol. 2, no. 3 (August 1984),
+pp. 181-197.
+
+Jim Gray.
+The Transaction Concept: Virtues and Limitations.
+Proc. 7th International Conference on Very Large Data Bases (September
+1981), pp. 144-154.
+
+Charles L. Hedrick,
+Introduction to the Internet Protocols.
+Internal Memo, Rutgers Computer Science Facilities Group,
+July 1987.
+
+Robert Morris and Ken Thompson,
+Password Security:  A Case History.
+Communications of the ACM, vol. 22, no. 11 (November 1979), pp. 594-597.
+
+Butler Lampson.
+Hints for Computer System Design.
+Proceedings of the 10th Symposium on Operating Systems Principles (1983),
+pp. 33-48.
+
+T.E. Anderson.
+The Case for Application-Specific Operating Systems.
+Proc. Third Workshop on Workstation Operating Systems (April 1992),
+pp. 92-94.

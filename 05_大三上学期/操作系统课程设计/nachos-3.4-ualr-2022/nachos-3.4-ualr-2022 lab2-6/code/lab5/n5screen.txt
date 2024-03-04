@@ -1,0 +1,283 @@
+u1@ubuntu:~/oscp/nachos-3.4-ualr-2022-lab/code/lab5$ rm -f DISK
+u1@ubuntu:~/oscp/nachos-3.4-ualr-2022-lab/code/lab5$ ./nachos -f
+No threads ready or runnable, and no pending interrupts.
+Assuming the program completed.
+Machine halting!
+
+Ticks: total 82520, idle 82270, system 250, user 0
+Disk I/O: reads 3, writes 5
+Console I/O: reads 0, writes 0
+Paging: faults 0
+Network I/O: packets received 0, sent 0
+
+Cleaning up...
+u1@ubuntu:~/oscp/nachos-3.4-ualr-2022-lab/code/lab5$ ./nachos -DI
+Disk size: 1024 sectors, 131072 bytes.
+Used: 5 sectors, 640 bytes.
+Free: 1019 sectors, 130432 bytes.
+0 bytes in 0 files, occupy 0 bytes(0 sectors).
+0 bytes of internal fragmentation in 0 sectors.
+No threads ready or runnable, and no pending interrupts.
+Assuming the program completed.
+Machine halting!
+
+Ticks: total 2660, idle 2500, system 160, user 0
+Disk I/O: reads 5, writes 0
+Console I/O: reads 0, writes 0
+Paging: faults 0
+Network I/O: packets received 0, sent 0
+
+Cleaning up...
+u1@ubuntu:~/oscp/nachos-3.4-ualr-2022-lab/code/lab5$ ./nachos -cp test/huge huge
+No threads ready or runnable, and no pending interrupts.
+Assuming the program completed.
+Machine halting!
+
+Ticks: total 4227020, idle 4211050, system 15970, user 0
+Disk I/O: reads 268, writes 264
+Console I/O: reads 0, writes 0
+Paging: faults 0
+Network I/O: packets received 0, sent 0
+
+Cleaning up...
+u1@ubuntu:~/oscp/nachos-3.4-ualr-2022-lab/code/lab5$ ./nachos -D
+Bit map file header:
+FileHeader contents.  File size: 128.  File blocks:
+2 
+File contents:
+\ff\ff\ff\1\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0
+Directory file header:
+FileHeader contents.  File size: 200.  File blocks:
+3 4 
+File contents:
+\1\0\0\0\5\0\0\0huge\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0
+\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0
+Bitmap set:
+0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 
+Directory contents:
+Name: huge, Sector: 5
+FileHeader contents.  File size: 2432.  File modification time: Thu Aug 12 15:35:04 2021.  File blocks:
+6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 
+File contents:
+<huge huge huge huge huge huge  huge>\a<huge huge huge huge huge huge  huge>\a<huge huge huge huge huge huge  huge>\a<huge huge hug
+e huge huge huge  huge>\a<huge huge huge huge huge huge  huge>\a<huge huge huge huge huge huge  huge>\a<huge huge huge huge huge hu
+ge  huge>\a<huge huge huge huge huge huge  huge>\a<huge huge huge huge huge huge  huge>\a<huge huge huge huge huge huge  huge>\a<hug
+e huge huge huge huge huge  huge>\a<huge huge huge huge huge huge  huge>\a<huge huge huge huge huge huge  huge>\a<huge huge huge hu
+ge huge huge  huge>\a<huge huge huge huge huge huge  huge>\a<huge huge huge huge huge huge  huge>\a<huge huge huge huge huge huge  
+huge>\a<huge huge huge huge huge huge  huge>\a<huge huge huge huge huge huge  huge>\a<huge huge huge huge huge huge  huge>\a<huge hu
+ge huge huge huge huge  huge>\a<huge huge huge huge huge huge  huge>\a<huge huge huge huge huge huge  huge>\a<huge huge huge huge h
+uge huge  huge>\a<huge huge huge huge huge huge  huge>\a<huge huge huge huge huge huge  huge>\a<huge huge huge huge huge huge  huge
+>\a<huge huge huge huge huge huge  huge>\a<huge huge huge huge huge huge  huge>\a<huge huge huge huge huge huge  huge>\a<huge huge h
+uge huge huge huge  huge>\a<huge huge huge huge huge huge  huge>\a<huge huge huge huge huge huge  huge>\a<huge huge huge huge huge 
+huge  huge>\a<huge huge huge huge huge huge  huge>\a<huge huge huge huge huge huge  huge>\a<huge huge huge huge huge huge  huge>\a<h
+uge huge huge huge huge huge  huge>\a<huge huge huge huge huge huge  huge>\a<huge huge huge huge huge huge  huge>\a<huge huge huge 
+huge huge huge  huge>\a<huge huge huge huge huge huge  huge>\a<huge huge huge huge huge huge  huge>\a<huge huge huge huge huge huge
+  huge>\a<huge huge huge huge huge huge  huge>\a<huge huge huge huge huge huge  huge>\a<huge huge huge huge huge huge  huge>\a<huge 
+huge huge huge huge huge  huge>\a<huge huge huge huge huge huge  huge>\a<huge huge huge huge huge huge  huge>\a<huge huge huge huge
+ huge huge  huge>\a<huge huge huge huge huge huge  huge>\a<huge huge huge huge huge huge  huge>\a<huge huge huge huge huge huge  hu
+ge>\a<huge huge huge huge huge huge  huge>\a<huge huge huge huge huge huge  huge>\a<huge huge huge huge huge huge  huge>\a<huge huge
+ huge huge huge huge  huge>\a<huge huge huge huge huge huge  huge>\a<huge huge huge huge huge huge  huge>\a<huge huge huge huge hug
+e huge  huge>\a<huge huge huge huge huge huge  huge>\a<huge huge huge huge huge huge  huge>\a<huge huge huge huge huge huge  huge>\a
+
+No threads ready or runnable, and no pending interrupts.
+Assuming the program completed.
+Machine halting!
+
+Ticks: total 15910, idle 15000, system 910, user 0
+Disk I/O: reads 30, writes 0
+Console I/O: reads 0, writes 0
+Paging: faults 0
+Network I/O: packets received 0, sent 0
+
+Cleaning up...
+u1@ubuntu:~/oscp/nachos-3.4-ualr-2022-lab/code/lab5$ ls --full-time test/huge    # 对比检查Nachos文件huge的修改时间应与test/huge相同
+-rw-rw-r-- 1 u1 u1 2432 2021-08-12 15:35:04.000000000 -0700 test/huge
+u1@ubuntu:~/oscp/nachos-3.4-ualr-2022-lab/code/lab5$ ./nachos -ap test/huge huge
+No threads ready or runnable, and no pending interrupts.
+Assuming the program completed.
+Machine halting!
+
+Ticks: total 4963020, idle 4937660, system 25360, user 0
+Disk I/O: reads 557, writes 288
+Console I/O: reads 0, writes 0
+Paging: faults 0
+Network I/O: packets received 0, sent 0
+
+Cleaning up...
+u1@ubuntu:~/oscp/nachos-3.4-ualr-2022-lab/code/lab5$ ./nachos -D    # 包括检查Nachos文件huge的修改时间应为当前时间
+Bit map file header:
+FileHeader contents.  File size: 128.  File blocks:
+2 
+File contents:
+\ff\ff\ff\ff\ff\1f\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0
+Directory file header:
+FileHeader contents.  File size: 200.  File blocks:
+3 4 
+File contents:
+\1\0\0\0\5\0\0\0huge\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0
+\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0
+Bitmap set:
+0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 
+Directory contents:
+Name: huge, Sector: 5
+FileHeader contents.  File size: 4864.  File modification time: Sun May 15 18:51:02 2022.  File blocks:
+6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34  Index2: 36 37 38 39 40 41 42 43 44 
+File contents:
+<huge huge huge huge huge huge  huge>\a<huge huge huge huge huge huge  huge>\a<huge huge huge huge huge huge  huge>\a<huge huge hug
+e huge huge huge  huge>\a<huge huge huge huge huge huge  huge>\a<huge huge huge huge huge huge  huge>\a<huge huge huge huge huge hu
+ge  huge>\a<huge huge huge huge huge huge  huge>\a<huge huge huge huge huge huge  huge>\a<huge huge huge huge huge huge  huge>\a<hug
+e huge huge huge huge huge  huge>\a<huge huge huge huge huge huge  huge>\a<huge huge huge huge huge huge  huge>\a<huge huge huge hu
+ge huge huge  huge>\a<huge huge huge huge huge huge  huge>\a<huge huge huge huge huge huge  huge>\a<huge huge huge huge huge huge  
+huge>\a<huge huge huge huge huge huge  huge>\a<huge huge huge huge huge huge  huge>\a<huge huge huge huge huge huge  huge>\a<huge hu
+ge huge huge huge huge  huge>\a<huge huge huge huge huge huge  huge>\a<huge huge huge huge huge huge  huge>\a<huge huge huge huge h
+uge huge  huge>\a<huge huge huge huge huge huge  huge>\a<huge huge huge huge huge huge  huge>\a<huge huge huge huge huge huge  huge
+>\a<huge huge huge huge huge huge  huge>\a<huge huge huge huge huge huge  huge>\a<huge huge huge huge huge huge  huge>\a<huge huge h
+uge huge huge huge  huge>\a<huge huge huge huge huge huge  huge>\a<huge huge huge huge huge huge  huge>\a<huge huge huge huge huge 
+huge  huge>\a<huge huge huge huge huge huge  huge>\a<huge huge huge huge huge huge  huge>\a<huge huge huge huge huge huge  huge>\a<h
+uge huge huge huge huge huge  huge>\a<huge huge huge huge huge huge  huge>\a<huge huge huge huge huge huge  huge>\a<huge huge huge 
+huge huge huge  huge>\a<huge huge huge huge huge huge  huge>\a<huge huge huge huge huge huge  huge>\a<huge huge huge huge huge huge
+  huge>\a<huge huge huge huge huge huge  huge>\a<huge huge huge huge huge huge  huge>\a<huge huge huge huge huge huge  huge>\a<huge 
+huge huge huge huge huge  huge>\a<huge huge huge huge huge huge  huge>\a<huge huge huge huge huge huge  huge>\a<huge huge huge huge
+ huge huge  huge>\a<huge huge huge huge huge huge  huge>\a<huge huge huge huge huge huge  huge>\a<huge huge huge huge huge huge  hu
+ge>\a<huge huge huge huge huge huge  huge>\a<huge huge huge huge huge huge  huge>\a<huge huge huge huge huge huge  huge>\a<huge huge
+ huge huge huge huge  huge>\a<huge huge huge huge huge huge  huge>\a<huge huge huge huge huge huge  huge>\a<huge huge huge huge hug
+e huge  huge>\a<huge huge huge huge huge huge  huge>\a<huge huge huge huge huge huge  huge>\a<huge huge huge huge huge huge  huge>\a
+<huge huge huge huge huge huge  huge>\a<huge huge huge huge huge huge  huge>\a<huge huge huge huge huge huge  huge>\a<huge huge hug
+e huge huge huge  huge>\a<huge huge huge huge huge huge  huge>\a<huge huge huge huge huge huge  huge>\a<huge huge huge huge huge hu
+ge  huge>\a<huge huge huge huge huge huge  huge>\a<huge huge huge huge huge huge  huge>\a<huge huge huge huge huge huge  huge>\a<hug
+e huge huge huge huge huge  huge>\a<huge huge huge huge huge huge  huge>\a<huge huge huge huge huge huge  huge>\a<huge huge huge hu
+ge huge huge  huge>\a<huge huge huge huge huge huge  huge>\a<huge huge huge huge huge huge  huge>\a<huge huge huge huge huge huge  
+huge>\a<huge huge huge huge huge huge  huge>\a<huge huge huge huge huge huge  huge>\a<huge huge huge huge huge huge  huge>\a<huge hu
+ge huge huge huge huge  huge>\a<huge huge huge huge huge huge  huge>\a<huge huge huge huge huge huge  huge>\a<huge huge huge huge h
+uge huge  huge>\a<huge huge huge huge huge huge  huge>\a<huge huge huge huge huge huge  huge>\a<huge huge huge huge huge huge  huge
+>\a<huge huge huge huge huge huge  huge>\a<huge huge huge huge huge huge  huge>\a<huge huge huge huge huge huge  huge>\a<huge huge h
+uge huge huge huge  huge>\a<huge huge huge huge huge huge  huge>\a<huge huge huge huge huge huge  huge>\a<huge huge huge huge huge 
+huge  huge>\a<huge huge huge huge huge huge  huge>\a<huge huge huge huge huge huge  huge>\a<huge huge huge huge huge huge  huge>\a<h
+uge huge huge huge huge huge  huge>\a<huge huge huge huge huge huge  huge>\a<huge huge huge huge huge huge  huge>\a<huge huge huge 
+huge huge huge  huge>\a<huge huge huge huge huge huge  huge>\a<huge huge huge huge huge huge  huge>\a<huge huge huge huge huge huge
+  huge>\a<huge huge huge huge huge huge  huge>\a<huge huge huge huge huge huge  huge>\a<huge huge huge huge huge huge  huge>\a<huge 
+huge huge huge huge huge  huge>\a<huge huge huge huge huge huge  huge>\a<huge huge huge huge huge huge  huge>\a<huge huge huge huge
+ huge huge  huge>\a<huge huge huge huge huge huge  huge>\a<huge huge huge huge huge huge  huge>\a<huge huge huge huge huge huge  hu
+ge>\a<huge huge huge huge huge huge  huge>\a<huge huge huge huge huge huge  huge>\a<huge huge huge huge huge huge  huge>\a<huge huge
+ huge huge huge huge  huge>\a<huge huge huge huge huge huge  huge>\a<huge huge huge huge huge huge  huge>\a<huge huge huge huge hug
+e huge  huge>\a<huge huge huge huge huge huge  huge>\a<huge huge huge huge huge huge  huge>\a<huge huge huge huge huge huge  huge>\a
+
+No threads ready or runnable, and no pending interrupts.
+Assuming the program completed.
+Machine halting!
+
+Ticks: total 54350, idle 52840, system 1510, user 0
+Disk I/O: reads 50, writes 0
+Console I/O: reads 0, writes 0
+Paging: faults 0
+Network I/O: packets received 0, sent 0
+
+Cleaning up...
+u1@ubuntu:~/oscp/nachos-3.4-ualr-2022-lab/code/lab5$ ./nachos -ap test/small huge
+No threads ready or runnable, and no pending interrupts.
+Assuming the program completed.
+Machine halting!
+
+Ticks: total 131020, idle 130200, system 820, user 0
+Disk I/O: reads 20, writes 7
+Console I/O: reads 0, writes 0
+Paging: faults 0
+Network I/O: packets received 0, sent 0
+
+Cleaning up...
+u1@ubuntu:~/oscp/nachos-3.4-ualr-2022-lab/code/lab5$ ./nachos -cp test/small small
+No threads ready or runnable, and no pending interrupts.
+Assuming the program completed.
+Machine halting!
+
+Ticks: total 151520, idle 150850, system 670, user 0
+Disk I/O: reads 13, writes 9
+Console I/O: reads 0, writes 0
+Paging: faults 0
+Network I/O: packets received 0, sent 0
+
+Cleaning up...
+u1@ubuntu:~/oscp/nachos-3.4-ualr-2022-lab/code/lab5$ ./nachos -cp test/medium medium
+No threads ready or runnable, and no pending interrupts.
+Assuming the program completed.
+Machine halting!
+
+Ticks: total 360520, idle 359070, system 1450, user 0
+Disk I/O: reads 26, writes 22
+Console I/O: reads 0, writes 0
+Paging: faults 0
+Network I/O: packets received 0, sent 0
+
+Cleaning up...
+u1@ubuntu:~/oscp/nachos-3.4-ualr-2022-lab/code/lab5$ ./nachos -DI
+Disk size: 1024 sectors, 131072 bytes.
+Used: 51 sectors, 6528 bytes.
+Free: 973 sectors, 124544 bytes.
+5092 bytes in 3 files, occupy 5376 bytes(42 sectors).
+284 bytes of internal fragmentation in 3 sectors.
+No threads ready or runnable, and no pending interrupts.
+Assuming the program completed.
+Machine halting!
+
+Ticks: total 8520, idle 8270, system 250, user 0
+Disk I/O: reads 8, writes 0
+Console I/O: reads 0, writes 0
+Paging: faults 0
+Network I/O: packets received 0, sent 0
+
+Cleaning up...
+u1@ubuntu:~/oscp/nachos-3.4-ualr-2022-lab/code/lab5$ ./nachos -r huge
+No threads ready or runnable, and no pending interrupts.
+Assuming the program completed.
+Machine halting!
+
+Ticks: total 66520, idle 66180, system 340, user 0
+Disk I/O: reads 8, writes 3
+Console I/O: reads 0, writes 0
+Paging: faults 0
+Network I/O: packets received 0, sent 0
+
+Cleaning up...
+u1@ubuntu:~/oscp/nachos-3.4-ualr-2022-lab/code/lab5$ ./nachos -r small
+No threads ready or runnable, and no pending interrupts.
+Assuming the program completed.
+Machine halting!
+
+Ticks: total 66520, idle 66210, system 310, user 0
+Disk I/O: reads 7, writes 3
+Console I/O: reads 0, writes 0
+Paging: faults 0
+Network I/O: packets received 0, sent 0
+
+Cleaning up...
+u1@ubuntu:~/oscp/nachos-3.4-ualr-2022-lab/code/lab5$ ./nachos -r medium
+No threads ready or runnable, and no pending interrupts.
+Assuming the program completed.
+Machine halting!
+
+Ticks: total 66520, idle 66210, system 310, user 0
+Disk I/O: reads 7, writes 3
+Console I/O: reads 0, writes 0
+Paging: faults 0
+Network I/O: packets received 0, sent 0
+
+Cleaning up...
+u1@ubuntu:~/oscp/nachos-3.4-ualr-2022-lab/code/lab5$ ./nachos -DI
+Disk size: 1024 sectors, 131072 bytes.
+Used: 5 sectors, 640 bytes.
+Free: 1019 sectors, 130432 bytes.
+0 bytes in 0 files, occupy 0 bytes(0 sectors).
+0 bytes of internal fragmentation in 0 sectors.
+No threads ready or runnable, and no pending interrupts.
+Assuming the program completed.
+Machine halting!
+
+Ticks: total 2660, idle 2500, system 160, user 0
+Disk I/O: reads 5, writes 0
+Console I/O: reads 0, writes 0
+Paging: faults 0
+Network I/O: packets received 0, sent 0
+
+Cleaning up...
+u1@ubuntu:~/oscp/nachos-3.4-ualr-2022-lab/code/lab5$ 
+

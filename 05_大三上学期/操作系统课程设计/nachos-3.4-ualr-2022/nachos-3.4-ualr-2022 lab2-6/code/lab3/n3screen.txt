@@ -1,0 +1,34 @@
+u1@ubuntu:~/oscp/nachos-3.4-ualr-2022/code/lab3$ ./nachos -rs 1
+Thread 3 rendezvous
+Thread 2 rendezvous
+Thread 8 rendezvous
+Thread 9 rendezvous
+Thread 4 rendezvous
+Thread 0 rendezvous
+Thread 1 rendezvous
+Thread 5 rendezvous
+Thread 6 rendezvous
+Thread 7 rendezvous
+Thread 7 is the last
+Thread 7 critical point
+Thread 3 critical point
+Thread 8 critical point
+Thread 2 critical point
+Thread 9 critical point
+Thread 4 critical point
+Thread 0 critical point
+Thread 5 critical point
+Thread 1 critical point
+Thread 6 critical point
+No threads ready or runnable, and no pending interrupts.
+Assuming the program completed.
+Machine halting!
+
+Ticks: total 111003, idle 113, system 110890, user 0
+Disk I/O: reads 0, writes 0
+Console I/O: reads 0, writes 0
+Paging: faults 0
+Network I/O: packets received 0, sent 0
+
+Cleaning up...
+u1@ubuntu:~/oscp/nachos-3.4-ualr-2022/code/lab3$ 

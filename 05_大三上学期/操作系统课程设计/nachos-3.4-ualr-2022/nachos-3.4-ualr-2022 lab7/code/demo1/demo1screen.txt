@@ -1,0 +1,26 @@
+u1@ubuntu:~/oscp/nachos-3.4-ualr-2022/code/demo1$ ./nachos -rs 123
+No threads ready or runnable, and no pending interrupts.
+Assuming the program completed.
+Machine halting!
+
+Ticks: total 1052, idle 42, system 1010, user 0
+Disk I/O: reads 0, writes 0
+Console I/O: reads 0, writes 0
+Paging: faults 0
+Network I/O: packets received 0, sent 0
+
+Cleaning up...
+u1@ubuntu:~/oscp/nachos-3.4-ualr-2022/code/demo1$ cat tmp_0
+producer id --> 0; Message number --> 0;
+producer id --> 0; Message number --> 1;
+producer id --> 0; Message number --> 3;
+producer id --> 0; Message number --> 4;
+producer id --> 1; Message number --> 1;
+producer id --> 1; Message number --> 3;
+u1@ubuntu:~/oscp/nachos-3.4-ualr-2022/code/demo1$ cat tmp_1
+producer id --> 0; Message number --> 2;
+producer id --> 1; Message number --> 0;
+producer id --> 1; Message number --> 2;
+producer id --> 1; Message number --> 4;
+u1@ubuntu:~/oscp/nachos-3.4-ualr-2022/code/demo1$ 
+

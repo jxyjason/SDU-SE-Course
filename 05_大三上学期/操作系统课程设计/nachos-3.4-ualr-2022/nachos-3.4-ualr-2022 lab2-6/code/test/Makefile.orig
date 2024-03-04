@@ -1,0 +1,77 @@
+#
+# Makefile for building user programs to run on top of Nachos
+#
+# Several things to be aware of:
+#
+#    Nachos assumes that the location of the program startup routine (the
+# 	location the kernel jumps to when the program initially starts up)
+#       is at location 0.  This means: start.o must be the first .o passed 
+# 	to ld, in order for the routine "Start" to be loaded at location 0
+#
+
+# Changes at Waterloo:  
+#     o Cross-compilation is handled automatically by the Makefile now.
+#         - when necessary, it assumes that /software/gcc_nachos exists, 
+#           which is true on cayley, napier, descartes.
+
+ifndef MAKEFILE_TEST
+define MAKEFILE_TEST
+yes
+endef
+
+# Machine dependent stuff
+include ../Makefile.dep
+
+real_bin_dir := $(bin_dir)
+
+# If user programs generated on different platforms were
+# interchangable, you could uncomment the following line, and
+# then only a single set of user program files would be shared
+# among architectures.  This should be the case (?).  But, it
+# seems that at least user programs generated on the SPARC do
+# not run correctly on MIPS versions of nachos...
+
+#arch = $(mips_arch)
+
+# GCCDIR will point to the location of the cross-compiler when
+# appropriate.
+
+CC = $(GCCDIR)gcc 
+AS = $(GCCDIR)as 
+LD = $(GCCDIR)ld
+
+# User programs.  Add your own stuff here. 
+# 
+# Note:  The convention is that there is exactly one .c file per target.
+#        The target is built by compiling the .c file and linking the 
+#        corresponding .o with start.o.  If you want to have more than
+#        one .c file per target, you will have to change stuff below.
+
+targets = halt shell matmult sort
+
+# Targest are put in the architecture specific 'bin' dir.
+
+all = $(targets:%=$(bin_dir)/%) 
+
+all: $(all)
+
+CFILES = $(targets:%=%.c)
+
+SFILES = start.s
+
+include ../Makefile.common
+
+INCDIR =-I../userprog -I../threads
+CFLAGS = -G 0 -c $(INCDIR)
+
+coff2noff = ../bin/$(real_bin_dir)/coff2noff
+
+$(all): $(bin_dir)/% : $(obj_dir)/start.o $(obj_dir)/%.o
+	@echo ">>> Linking" $(obj_dir)/$(notdir $@).coff "<<<"
+	$(LD) $(LDFLAGS) $^ -o $(obj_dir)/$(notdir $@).coff
+	@echo ">>> Converting to noff file:" $@ "<<<"
+	$(coff2noff) $(obj_dir)/$(notdir $@).coff $@
+	ln -sf $@ $(notdir $@)
+endif # MAKEFILE_TEST
+
+
