@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1648969045 source:/home/jasoj/Code/Experiment2/own/main.c
+	<stdio.h>
+	<unistd.h>
+	<stdlib.h>
+

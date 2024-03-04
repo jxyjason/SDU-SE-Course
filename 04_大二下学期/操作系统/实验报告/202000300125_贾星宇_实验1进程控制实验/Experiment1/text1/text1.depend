@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1648557132 source:/home/jasoj/Code/Experiment1/text1/main.c
+	<stdio.h>
+	<stdlib.h>
+	"main.h"
+
+1648553850 /home/jasoj/Code/Experiment1/text1/main.h
+	<sys/types.h>
+	<wait.h>
+	<unistd.h>
+	<signal.h>
+	<stdio.h>
+	<stdlib.h>
+

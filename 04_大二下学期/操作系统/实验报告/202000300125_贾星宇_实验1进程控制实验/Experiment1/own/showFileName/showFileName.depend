@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1648568528 source:/home/jasoj/Code/Experiment1/own/showFileName/main.c
+	<signal.h>
+	<stdio.h>
+	<stdlib.h>
+	<sys/types.h>
+	<unistd.h>
+	<wait.h>
+
