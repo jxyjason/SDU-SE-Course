@@ -1,0 +1,3 @@
+"D:\MC_00\CLion 2021.2.3\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\Experiment3.dir/objects.a
+D:\Clion\mingw64\bin\ar.exe cr CMakeFiles\Experiment3.dir/objects.a @CMakeFiles\Experiment3.dir\objects1.rsp
+D:\Clion\mingw64\bin\g++.exe -g -Wl,--whole-archive CMakeFiles\Experiment3.dir/objects.a -Wl,--no-whole-archive -o Experiment3.exe -Wl,--out-implib,libExperiment3.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\Experiment3.dir\linklibs.rsp
