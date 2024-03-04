@@ -1,0 +1,48 @@
+\ttl@change@i {\@ne }{chapter}{2em}{\vspace {.5\baselineskip }\xiaosi \song }{\prechaptername \CJKnumber {\thecontentslabel }\postchaptername \qquad }{}{\hspace {.5em}\titlerule *[10pt]{$\cdot $}\xiaosi \contentspage }\relax 
+\ttl@change@v {chapter}{}{}{}\relax 
+\ttl@change@i {\@ne }{section}{3em}{\vspace {.25\baselineskip }\wuhao \song }{\thecontentslabel \quad }{}{\hspace {.5em}\titlerule *[10pt]{$\cdot $}\wuhao \contentspage }\relax 
+\ttl@change@v {section}{}{}{}\relax 
+\ttl@change@i {\@ne }{subsection}{4em}{\vspace {.25\baselineskip }\wuhao \song }{\thecontentslabel \quad }{}{\hspace {.5em}\titlerule *[10pt]{$\cdot $}\wuhao \contentspage }\relax 
+\ttl@change@v {subsection}{}{}{}\relax 
+\contentsline {chapter}{\numberline {1}模板介绍与注意事项}{1}{section*.5}
+\contentsline {section}{\numberline {1.1}模板说明}{1}{section*.6}
+\contentsline {section}{\numberline {1.2}维护}{1}{section*.7}
+\contentsline {section}{\numberline {1.3}目录内容}{1}{section*.8}
+\contentsline {section}{\numberline {1.4}参考文献生成和标注方法}{2}{section*.9}
+\contentsline {section}{\numberline {1.5}注意事项}{3}{section*.10}
+\contentsline {section}{\numberline {1.6}系统要求}{4}{section*.11}
+\contentsline {section}{\numberline {1.7}Why\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces \LaTeX \hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces ？}{4}{section*.12}
+\contentsline {subsection}{\numberline {1.7.1}我应该看什么\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces \LaTeX \hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces 读物\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces ？}{5}{section*.13}
+\contentsline {section}{\numberline {1.8}免责声明}{6}{section*.14}
+\contentsline {chapter}{\numberline {2}图片的插入方法}{7}{section*.15}
+\contentsline {section}{\numberline {2.1}山东大学对于插图的要求}{7}{section*.16}
+\contentsline {section}{\numberline {2.2}\LaTeX \hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces 中推荐使用的图片格式}{7}{section*.17}
+\contentsline {section}{\numberline {2.3}单张图片的插入方法}{7}{section*.18}
+\contentsline {section}{\numberline {2.4}具有子图的图片插入方法}{9}{section*.22}
+\contentsline {chapter}{\numberline {3}表格的绘制方法}{11}{section*.26}
+\contentsline {section}{\numberline {3.1}本科生毕业论文的绘表规范}{11}{section*.27}
+\contentsline {section}{\numberline {3.2}普通表格的绘制方法}{11}{section*.28}
+\contentsline {section}{\numberline {3.3}长表格的绘制方法}{13}{section*.30}
+\contentsline {section}{\numberline {3.4}列宽可调表格的绘制方法}{15}{section*.32}
+\contentsline {subsection}{\numberline {3.4.1}表格内某单元格内容过长的情况}{15}{section*.33}
+\contentsline {subsection}{\numberline {3.4.2}对物理量符号进行注释的情况}{16}{section*.35}
+\contentsline {chapter}{\numberline {4}数学公式的输入方法}{19}{section*.36}
+\contentsline {section}{\numberline {4.1}本科生毕业论文的公式规范}{19}{section*.37}
+\contentsline {section}{\numberline {4.2}生成\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces \LaTeX \hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces 数学公式的两种方法}{19}{section*.38}
+\contentsline {subsection}{\numberline {4.2.1}基于\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces MathType\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces 软件的数学公式生成方法}{19}{section*.39}
+\contentsline {subsection}{\numberline {4.2.2}基于\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces MATLAB\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces 软件的数学公式生成方法}{20}{section*.40}
+\contentsline {section}{\numberline {4.3}数学字体}{20}{section*.41}
+\contentsline {section}{\numberline {4.4}行内公式}{21}{section*.43}
+\contentsline {section}{\numberline {4.5}行间公式}{22}{section*.48}
+\contentsline {section}{\numberline {4.6}可自动调整大小的定界符}{22}{section*.50}
+\contentsline {section}{\numberline {4.7}数学重音符号}{23}{section*.51}
+\contentsline {chapter}{\numberline {5}罗列、定理和代码环境使用方法}{25}{section*.52}
+\contentsline {section}{\numberline {5.1}单层罗列环境}{25}{section*.53}
+\contentsline {section}{\numberline {5.2}定理环境}{26}{section*.55}
+\contentsline {section}{\numberline {5.3}代码环境}{27}{section*.59}
+\contentsline {section}{\numberline {5.4}算法环境}{28}{section*.60}
+\contentsline {chapter}{结\hskip 1em\relax 论}{30}{section*.62}
+\contentsline {chapter}{参考文献}{32}{section*.66}
+\contentsline {chapter}{外文资料}{33}{section*.68}
+\contentsline {chapter}{中文译文}{34}{section*.70}
+\contentsfinish 

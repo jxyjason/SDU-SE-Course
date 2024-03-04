@@ -1,0 +1,29 @@
+This is BibTeX, Version 0.99dThe top-level auxiliary file: sdumain.aux
+A level-1 auxiliary file: body/intros.aux
+A level-1 auxiliary file: body/figures.aux
+A level-1 auxiliary file: body/tables.aux
+A level-1 auxiliary file: body/equations.aux
+A level-1 auxiliary file: body/others.aux
+A level-1 auxiliary file: body/conclusion.aux
+A level-1 auxiliary file: appendix/acknowledgements.aux
+The style file: SDUThesis.bst
+A level-1 auxiliary file: appendix/paperInEnglish.aux
+A level-1 auxiliary file: appendix/paperInChinese.aux
+Database file #1: references/reference.bib
+-- BUPTThesis.bst version 0.2 (2009/01/25) by Yu Zhang.
+-- http://code.google.com/p/buptthesis/
+-- See the "userguide.pdf" manual for usage information.
+Warning--empty journal in fandongjin
+Warning--empty pages in fandongjin
+Warning--empty pages in wenmiaoli
+Warning--there's a publisher but no address in tucker2004computer
+Warning--empty journal in zhang2013review
+Warning--empty pages in zhang2013review
+Warning--empty pages in gonzalez2002digital
+Warning--The editor in bazen2001segmentation is missing.
+Warning--empty editor in bazen2001segmentation
+Warning--there's a school but no address in kunming
+Warning--there's a publisher but no address in duda2012pattern
+
+Done.
+(There were 11 warnings)

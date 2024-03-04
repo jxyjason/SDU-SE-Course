@@ -1,0 +1,40 @@
+% !Mode:: "TeX:UTF-8"
+
+%%  可通过增加或减少 setup/format.tex中的
+%%  第274行 \setlength{\@title@width}{8cm}中 8cm 这个参数来 控制封面中下划线的长度。
+
+\fancypagestyle{plain}{
+\fancyhf{}
+\renewcommand{\headrulewidth}{0 pt}
+\fancyfoot[C]{\song\xiaowu~\thepage~}
+}
+\cheading{山东大学毕业论文（设计）}      % 设置正文的页眉，需要填上对应的毕业年份
+\ctitle{山东大学本科生学位论文~~\LaTeX~模板操作说明书}    % 封面用论文标题，自己可手动断行
+\caffil{山东大学软件学院} % 学院名称
+\csubject{软件工程}   % 专业名称
+\cgrade{2010~级}            % 年级
+\cauthor{熊凤超}            % 学生姓名
+\cnumber{201000301233}        % 学生学号
+\csupervisor{XXX}        % 导师姓名
+\crank{教~~授}              % 导师职称
+
+%\cdate{\CTEXdigits{\the\year} 年\CJKnumber{\the\month} 月 \CJKnumber{\the\day} 日}  % 显示为中文日期格式
+\cdate{\the\year~年~\the\month~月~\the\day~日}
+\cabstract{
+中文摘要：论文第一页为中文摘要，一般为300字左右（约A4纸张1/2页）为好。中文摘要应以最简洁的语言对自己的论文及工作进行全面的介绍，是全文的一个高度概括。用句应精炼概括。
+为了便于文献检索，应在本页下方另起一行注明论文的关键词(3-5个)，之间用分号相隔。关键词应体现论文的主要内容，词组符合学术规范。中文“摘要”标题字用小三号加重黑体字，摘要内容用小四号宋体字。
+
+
+}
+
+\ckeywords{关键字1，关键字2，关键字3，关键字4}
+
+\eabstract{
+外文摘要：外文摘要另起一页。外文摘要内容应与中文摘要基本相一致，要语句通顺，语法正确，准确地反映论文的内容，并在其后列出与中文相对应的外文关键词。“摘要”标题字用加重小三号字体Times New Roman字体大写字母，摘要内容用小四号Times New Roman字体小写字母。
+}
+
+\ekeywords{kwords1 ; kwords2 ;kwords3}
+
+\makecover
+
+\clearpage
