@@ -1,0 +1,13 @@
+EchoClient.java 是客户端程序
+EchoServer.java 是服务器端程序
+
+JabberClient.java 是客户端程序
+JabberServer.java  是单线程的服务器端程序，只能一问一答的方式
+
+MultiJabberServer.java 和 ServerOneJabber.java 是用多线程实现的服务器端程序，客户端程序仍然可以用JabberClient.java
+
+simpleServer.java  是服务器端程序
+ServerHandleThread.java     服务器端处理线程
+User.java 是要传输的用户对象
+userClient.java 是客户端程序，可以同时启动几个客户端程序，请求连接到服务器端
+
